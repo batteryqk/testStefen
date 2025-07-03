@@ -220,11 +220,11 @@
 }
 
 .btn-primary {
-  @apply bg-text-primary text-white hover: bg-text-primary/80;
+  @apply bg-text-primary text-white hover:bg-text-primary/80;
 }
 
 .input {
-  @apply outline-0 ring-0 border-emerald-500 w-full focus: outline-0 focus:ring-0 focus:border-emerald-500 focus-within:border-emerald-500;
+  @apply outline-0 ring-0 border-emerald-500 w-full focus:outline-0 focus:ring-0 focus:border-emerald-500 focus-within:border-emerald-500;
 }
 
 /* .input {
