@@ -23,7 +23,7 @@
                     </div>
                     <div class="flex-shrink-0 hidden md:block">
                         <a href="/" class="flex items-center space-x-2">
-                            <img src="{{ asset('frontend/images/logo.PNG') }}" alt="Valgrit Logo" class="h-10">
+                            <img src="{{ asset('frontend/images/logo.PNG') }}" alt="Valgrit Logo" class="h-14">
                         </a>
                     </div>
                 </div>
