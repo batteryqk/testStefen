@@ -49,6 +49,7 @@
         <!-- Page Content -->
         <main>
             {{ $slot }}
+
         </main>
     </div>
       <script src="{{ asset('assets/js/lucide-icon.js') }}"></script>

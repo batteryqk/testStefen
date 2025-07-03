@@ -7,10 +7,10 @@
         
         <div class="max-w-md w-full space-y-8">
             <div class="text-center">
-                <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                <h1 class="text-3xl text-text-primary font-bold  dark:text-white mb-2">
                     {{ config('app.name', 'Dashboard') }}
                 </h1>
-                <p class="text-gray-600 dark:text-gray-300">
+                <p class=" dark:text-gray-300">
                     @if(Auth::guard('admin')->check())
                         Welcome, Admin!
                     @elseif(Auth::check()) {{-- Check for regular user login --}}
