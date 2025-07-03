@@ -52,6 +52,9 @@
             {{ $slot }}
 
         </main>
+
+        {{-- footer --}}
+        <x-frontend.footer />
     </div>
       <script src="{{ asset('assets/js/lucide-icon.js') }}"></script>
     <script>
@@ -123,6 +126,7 @@
         }
         
     </script>
+    <script src="{{ asset('frontend/js/header.js') }}"></script>
     @stack('js')
 </body>
 
