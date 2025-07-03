@@ -1,6 +1,6 @@
-<section class="bg-text-secondary">
+<section class="bg-text-secondary "> <!-- Added pt-20 to prevent content overlap -->
 
-    <nav class="bg-white shadow-md">
+    <nav class="bg-white shadow-md fixed top-0 w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
 
@@ -34,16 +34,28 @@
                             <img src="{{ asset('frontend/images/logo.PNG') }}" alt="Valgrit Logo" class="h-10">
                         </a>
                     </div>
-                    <div class="hidden md:flex items-baseline space-x-8">
+                    <div class="hidden md:flex items-baseline space-x-10">
                         <a href="/"
-                            class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 px-3 py-2 rounded-md text-2xl font-bold transition-colors"
-                            data-page="início">Início</a>
+                            class="group relative nav-link text-text-black hover:text-text-primary px-3 py-2 rounded-md text-2xl font-bold transition-colors duration-300 ease-in-out"
+                            data-page="início">
+                            Início
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        </a>
                         <a href="#"
-                            class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 px-3 py-2 rounded-md text-2xl font-bold transition-colors"
-                            data-page="produtos">Produtos</a>
+                            class="group relative nav-link text-text-black hover:text-text-primary px-3 py-2 rounded-md text-2xl font-bold transition-colors duration-300 ease-in-out"
+                            data-page="produtos">
+                            Produtos
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        </a>
                         <a href="#"
-                            class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 px-3 py-2 rounded-md text-2xl font-bold transition-colors"
-                            data-page="loja">Loja</a>
+                            class="group relative nav-link text-text-black hover:text-text-primary px-3 py-2 rounded-md text-2xl font-bold transition-colors duration-300 ease-in-out"
+                            data-page="loja">
+                            Loja
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                        </a>
                     </div>
                 </div>
 
@@ -55,10 +67,9 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </button>
-                    <div class="dropdown dropdown-end">
-                        <div tabindex="0" role="button" class=" m-1"> 
-                            <svg class="h-7 w-7"
-                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    <div class="dropdown dropdown-end text-text-black hover:text-text-primary focus:outline-none">
+                        <div tabindex="0" role="button" class=" m-1">
+                            <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
