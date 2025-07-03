@@ -1,11 +1,11 @@
+
 <footer
-    class="bg-gradient-to-br from-slate-50 to-white text-text-black py-8 px-4 sm:py-12 sm:px-6  lg:px-8 border-t border-gray-100 shadow-2xl">
+    class="bg-gradient-to-br from-slate-50 to-white text-text-black py-8 px-4 sm:py-12 sm:px-6 lg:px-8 border-t border-gray-100 shadow-2xl">
     <div class="max-w-7xl mx-auto">
-        <!-- Mobile Accordion Menu (only shows on small screens) -->
         <div class="block sm:hidden mb-6">
             <details class="group mb-4 border-b border-gray-200 pb-4" open>
                 <summary class="flex justify-between items-center cursor-pointer list-none">
-                    <h3 class="text-lg font-bold text-text-black">Follow Us</h3>
+                    <h3 class="text-lg font-bold text-text-black">Siga-nos</h3>
                     <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -40,7 +40,7 @@
 
             <details class="group mb-4 border-b border-gray-200 pb-4">
                 <summary class="flex justify-between items-center cursor-pointer list-none">
-                    <h3 class="text-lg font-bold text-text-black">Contact Us</h3>
+                    <h3 class="text-lg font-bold text-text-black">Contate-nos</h3>
                     <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -55,7 +55,7 @@
                                 clip-rule="evenodd" />
                         </svg>
                         <div>
-                            <p class="text-text-black">49 Toze Street, Lisbon</p>
+                            <p class="text-text-black">Rua Toze, 49, Lisboa</p>
                         </div>
                     </div>
                     <div class="flex items-center space-x-3">
@@ -75,7 +75,7 @@
                                 clip-rule="evenodd" />
                         </svg>
                         <div>
-                            <p class="text-text-black">10:00 - 18:00<br>Monday - Sunday</p>
+                            <p class="text-text-black">10:00 - 18:00<br>Segunda - Domingo</p>
                         </div>
                     </div>
                 </div>
@@ -83,32 +83,32 @@
 
             <details class="group mb-4 border-b border-gray-200 pb-4">
                 <summary class="flex justify-between items-center cursor-pointer list-none">
-                    <h3 class="text-lg font-bold text-text-black">About</h3>
+                    <h3 class="text-lg font-bold text-text-black">Sobre</h3>
                     <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </summary>
                 <div class="pt-4 space-y-3">
-                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors">Delivery
-                        Information</a>
-                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors">Privacy
-                        Policy</a>
-                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors">Terms &
-                        Conditions</a>
+                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors">Informações de
+                        Entrega</a>
+                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors">Política de
+                        Privacidade</a>
+                    <a href="#" class="block text-text-black hover:text-text-primary transition-colors">Termos e
+                        Condições</a>
                 </div>
             </details>
 
             <details class="group mb-4">
                 <summary class="flex justify-between items-center cursor-pointer list-none">
-                    <h3 class="text-lg font-bold text-text-black">Get Our App</h3>
+                    <h3 class="text-lg font-bold text-text-black">Baixe Nosso Aplicativo</h3>
                     <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </summary>
                 <div class="pt-4">
-                    <p class="text-text-black mb-4">Download from Google Play or App Store</p>
+                    <p class="text-text-black mb-4">Baixe na Google Play ou App Store</p>
                     <div class="flex ">
                         <a href="#" class="block">
                             <img src="{{ asset('frontend/images/play.jpg') }}" alt="Google Play"
@@ -125,10 +125,8 @@
             </details>
         </div>
 
-        <!-- Desktop Grid (hidden on mobile) -->
         <div
             class="hidden sm:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 mb-12">
-            <!-- Follow Us Column -->
             <div class="flex flex-col items-center sm:items-start text-center sm:text-left space-y-6">
                 <div class="relative group flex items-center justify-center ml-14">
                     <div
@@ -137,7 +135,7 @@
                     <div
                         class="relative bg-white p-3 sm:p-4 rounded-full shadow-lg border border-gray-100 transform group-hover:scale-105 transition-transform duration-300 flex items-center justify-center w-28 h-28 sm:w-20 sm:h-20">
                         <img src="{{ asset('frontend/images/footer_logo.png') }}" alt="logo"
-                            class="w-24 h-24  object-contain" />
+                            class="w-24 h-24 object-contain" />
                     </div>
                 </div>
 
@@ -185,9 +183,8 @@
                 </div>
             </div>
 
-            <!-- Contact us Column -->
             <div class="space-y-4">
-                <h3 class="text-text-primary text-2xl sm:text-3xl font-extrabold bg-gradient-to-r">Contact Us</h3>
+                <h3 class="text-text-primary text-2xl sm:text-3xl font-extrabold bg-gradient-to-r">Contate-nos</h3>
 
                 <div class="space-y-3 text-sm sm:text-base">
                     <div class="flex items-start space-x-3">
@@ -198,8 +195,8 @@
                                 clip-rule="evenodd" />
                         </svg>
                         <div>
-                            <span class="font-semibold text-text-black">Address:</span>
-                            <p class="text-text-black">49 Toze Street, Lisbon</p>
+                            <span class="font-semibold text-text-black">Endereço:</span>
+                            <p class="text-text-black">Rua Toze, 49, Lisboa</p>
                         </div>
                     </div>
 
@@ -210,7 +207,7 @@
                                 d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                         </svg>
                         <div>
-                            <span class="font-semibold text-text-black">Phone:</span>
+                            <span class="font-semibold text-text-black">Telefone:</span>
                             <span class="text-text-black">+351 989 844 1981</span>
                         </div>
                     </div>
@@ -223,18 +220,17 @@
                                 clip-rule="evenodd" />
                         </svg>
                         <div>
-                            <span class="font-semibold text-text-black">Hours:</span>
-                            <p class="text-text-black">10:00 - 18:00<br>Monday - Sunday</p>
+                            <span class="font-semibold text-text-black">Horário:</span>
+                            <p class="text-text-black">10:00 - 18:00<br>Segunda - Domingo</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- About Column -->
             <div class="text-center sm:text-left">
                 <h3
                     class="text-text-black text-2xl sm:text-3xl font-extrabold mb-4 sm:mb-6 bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">
-                    About</h3>
+                    Sobre</h3>
                 <ul class="space-y-3 text-base sm:text-lg">
                     <li><a href="#"
                             class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2">
@@ -242,35 +238,34 @@
                         </a></li>
                     <li><a href="#"
                             class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2">
-                            Registeration
+                            Cadastro
                         </a></li>
                     <li><a href="#"
                             class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2">
-                            Delivery Information
+                            Informações de Entrega
                         </a></li>
                     <li><a href="#"
                             class="group flex items-center justify-center sm:justify-start text-text-black hover:text-text-primary transition-all duration-300 transform hover:translate-x-2">
-                            Privacy Policy
+                            Política de Privacidade
                         </a></li>
 
                 </ul>
             </div>
 
-            <!-- App Column -->
             <div class="text-center sm:text-left">
-                <h3 class="text-text-primary text-2xl sm:text-3xl font-extrabold mb-4 sm:mb-6 bg-gradient-to-r">Get Our
-                    App</h3>
-                <p class="text-sm sm:text-base text-text-black mb-4 sm:mb-6 font-medium">Download from Google Play or
-                    App Store</p>
+                <h3 class="text-text-primary text-2xl sm:text-3xl font-extrabold mb-4 sm:mb-6 bg-gradient-to-r">Baixe
+                    Nosso Aplicativo</h3>
+                <p class="text-sm sm:text-base text-text-black mb-4 sm:mb-6 font-medium">Baixe na Google Play ou App
+                    Store</p>
 
                 <div class="flex flex-col sm:flex-row gap-3">
                     <a href="#" aria-label="Google Play Store"
-                        class="group  relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                        class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                         <div
                             class="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300">
                         </div>
                         <img src="{{ asset('frontend/images/play.jpg') }}" alt="Google Play"
-                            class="rounded-lg w-full  h-auto " loading="lazy">
+                            class="rounded-lg w-full h-auto " loading="lazy">
                     </a>
                     <a href="#" aria-label="App Store"
                         class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
@@ -289,9 +284,10 @@
 
         <div class="pt-6 sm:pt-8 border-t border-gray-200 text-center">
             <p class="text-text-black text-xs sm:text-sm">
-                &copy; 2025 <span class="font-bold text-text-primary">Valgrit</span> - Clothing & Supplements Store.
-                All rights reserved.
+                &copy; 2025 <span class="font-bold text-text-primary">Valgrit</span> - Loja de Roupas e Suplementos.
+                Todos os direitos reservados.
             </p>
         </div>
     </div>
 </footer>
+```

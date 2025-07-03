@@ -67,7 +67,7 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </button>
-                    <div class="dropdown dropdown-end text-text-black hover:text-text-primary focus:outline-none">
+                    <div class="dropdown dropdown-end text-text-black  focus:outline-none">
                         <div tabindex="0" role="button" class=" m-1">
                             <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -76,8 +76,8 @@
                             </svg>
                         </div>
                         <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-1 w-40 p-2 shadow-sm">
-                            <li><a>Login</a></li>
-                            <li><a>Registration</a></li>
+                            <li><a href="{{route('login')}}"  class="hover:text-text-primary">Login</a></li>
+                            <li><a href="{{route('register')}}" class="hover:text-text-primary">Registration</a></li>
                         </ul>
                     </div>
                     <button class="text-text-black hover:text-text-primary focus:outline-none">
