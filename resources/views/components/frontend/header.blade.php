@@ -1,0 +1,127 @@
+<section class="bg-text-secondary">
+
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+
+                <div class="flex items-center">
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-text-black hover:text-text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
+                            <span class="sr-only">Open main menu</span>
+                            <svg id="hamburger-icon" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                            <svg id="close-icon" class="h-6 w-6 hidden" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex-shrink-0 hidden md:block">
+                        <a href="/" class="flex items-center space-x-2">
+                            <img src="https://placehold.co/120x50/f8f8f8/c9302c?text=VALGRIT&font=raleway"
+                                alt="Valgrit Logo" class="h-10">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex-grow flex justify-center items-center">
+                    <div class="md:hidden">
+                        <a href="#">
+                            <img src="https://placehold.co/120x50/f8f8f8/c9302c?text=VALGRIT&font=raleway"
+                                alt="Valgrit Logo" class="h-10">
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-baseline space-x-8">
+                        <a href="/"
+                            class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 px-3 py-2 rounded-md text-2xl font-bold transition-colors"
+                            data-page="início">Início</a>
+                        <a href="#"
+                            class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 px-3 py-2 rounded-md text-2xl font-bold transition-colors"
+                            data-page="produtos">Produtos</a>
+                        <a href="#"
+                            class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 px-3 py-2 rounded-md text-2xl font-bold transition-colors"
+                            data-page="loja">Loja</a>
+                    </div>
+                </div>
+
+                <div class="flex justify-end items-center space-x-6">
+                    <button class="text-text-black hover:text-text-primary focus:outline-none">
+                        <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                    <button class="text-text-black hover:text-text-primary focus:outline-none">
+                        <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                    </button>
+                    <button class="text-text-black hover:text-text-primary focus:outline-none">
+                        <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#"
+                    class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium"
+                    data-page="início">Início</a>
+                <a href="#"
+                    class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium"
+                    data-page="produtos">Produtos</a>
+                <a href="#"
+                    class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium"
+                    data-page="loja">Loja</a>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        // JavaScript to toggle the mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // JavaScript to highlight the active page
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentPath = window.location.pathname.split('/').pop().replace('.html', '');
+            if (currentPath === '' || currentPath === 'index') { // Handle index.html or root path
+                currentPath = 'início'; // Or whatever your default page's data-page is
+            }
+
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            navLinks.forEach(link => {
+                const pageName = link.dataset.page;
+                if (pageName === currentPath) {
+                    link.classList.add('text-text-primary', 'font-bold');
+                    link.classList.remove('text-text-black');
+                } else {
+                    link.classList.add('text-text-black');
+                    link.classList.remove('text-text-primary', 'font-bold');
+                }
+            });
+        });
+    </script>
+</section>
