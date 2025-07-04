@@ -33,5 +33,27 @@
         </div>
     </div>    
 </section>
+<section class="flex justify-center items-center min-h-[697px] bg-white py-16">
+    <div class="w-full max-w-[1270px] flex flex-col md:flex-row shadow-lg rounded-lg overflow-hidden">
+        <!-- Image Side -->
+       <div class="md:w-1/2 w-full h-[350px] md:h-[697px] px-4 lg:px-8">
+         <img src="{{ asset('assets/frontend/imagens/foto.jpg') }}"
+         alt="Beautiful Design"
+         class="w-full h-full object-cover rounded-xl">
+       </div>
+
+
+        <!-- Content Side -->
+        <div class="md:w-1/2 w-full flex flex-col justify-start items-center md:items-start p-10 bg-gradient-to-br from-white to-gray-100">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-left">Design Impressionante</h1>
+            <p class="text-lg md:text-xl text-gray-600 mb-4 text-left">
+            Descubra a beleza e sofisticação em cada detalhe. Nossa coleção premium combina conforto, estilo e inovação para elevar seu visual fitness ao próximo nível.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem labore cumque optio! Nostrum minus eum pariatur repudiandae, aperiam debitis consequuntur veritatis deserunt ea vel blanditiis, assumenda optio voluptate beatae. Earum.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores rerum vel sint voluptatum quaerat? Reiciendis, eius! Illo, inventore ad. Nostrum omnis eos itaque iste quasi blanditiis nihil modi dolores quae.
+            </p>
+        </div>
+    </div>
+</section>
+
 </x-frontend::layout>
 
