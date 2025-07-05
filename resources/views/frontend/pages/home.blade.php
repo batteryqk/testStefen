@@ -9,8 +9,8 @@
     <img src="{{ asset('assets/frontend/imagens/foto.jpg') }}" alt="About Us Background" class="w-full h-[655px] object-cover">
     <div class="absolute inset-0 bg-black opacity-40"></div>
     <div class="absolute left-1/2 top-[65%] md:left-20 md:top-1/2 transform -translate-x-1/2 md:-translate-x-0 -translate-y-1/2 z-10 text-center md:text-left">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">VALGRIT</h1>
-        <p class="text-xl md:text-2xl font-semibold mb-6 text-white">A NOSSA MISSAO</p>
+        <h1 class="text-4xl md:text-5xl font-bold ml-6 mb-4 text-white">VALGRIT</h1>
+        <p class="text-xl md:text-2xl font-semibold mb-6 text-white ">A NOSSA MISSAO</p>
         <a href="#saiba-mais" class="inline-block  hover:bg-red-700 hover:text-white text-text-primary font-semibold text-3xl px-5 py-2 rounded shadow transition duration-300">
             SAIBA MAIS
         </a>
