@@ -2,7 +2,8 @@
   <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
     
     <!-- Example Card (repeat this structure) -->
-    <div class="bg-white rounded-3xl overflow-hidden relative group">
+    <div class="bg-white rounded-3xl overflow-hidden relative group ">
+      
       <div class="relative overflow-hidden">
         <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
           class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
