@@ -9,7 +9,7 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
       </div>
       <div class="p-5 sm:p-7">
-        <span class="text-xs uppercase text-gray-500 font-medium tracking-wide">Valgrit</span>
+      
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
           <div class="flex space-x-1">
@@ -25,10 +25,10 @@
           <span class="text-gray-600 text-xs ml-2">(4.0)</span>
         </div>
         <div class="flex justify-between items-center mt-3">
-          <h4 class="text-2xl font-extrabold text-indigo-700">45,99€</h4>
+          <h4 class="text-2xl font-extrabold text-text-primary">45,99€</h4>
          <button class="bg-indigo-500 text-white rounded-lg px-4 py-2 text-base font-semibold hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors flex items-center gap-2 shadow">
   <!-- Icon -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
       d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m4-9l2 9" />
   </svg>
@@ -47,7 +47,7 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
       </div>
       <div class="p-5 sm:p-7">
-        <span class="text-xs uppercase text-gray-500 font-medium tracking-wide">Valgrit</span>
+      
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
           <div class="flex space-x-1">
@@ -63,10 +63,10 @@
           <span class="text-gray-600 text-xs ml-2">(4.0)</span>
         </div>
         <div class="flex justify-between items-center mt-3">
-          <h4 class="text-2xl font-extrabold text-indigo-700">45,99€</h4>
+          <h4 class="text-2xl font-extrabold text-text-primary">45,99€</h4>
          <button class="bg-indigo-500 text-white rounded-lg px-4 py-2 text-base font-semibold hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors flex items-center gap-2 shadow">
   <!-- Icon -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
       d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m4-9l2 9" />
   </svg>
@@ -83,7 +83,7 @@
         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
       </div>
       <div class="p-5 sm:p-7">
-        <span class="text-xs uppercase text-gray-500 font-medium tracking-wide">Valgrit</span>
+   
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
           <div class="flex space-x-1">
@@ -99,10 +99,10 @@
           <span class="text-gray-600 text-xs ml-2">(4.0)</span>
         </div>
         <div class="flex justify-between items-center mt-3">
-          <h4 class="text-2xl font-extrabold text-indigo-700">45,99€</h4>
+          <h4 class="text-2xl font-extrabold text-text-primary">45,99€</h4>
          <button class="bg-indigo-500 text-white rounded-lg px-4 py-2 text-base font-semibold hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition-colors flex items-center gap-2 shadow">
   <!-- Icon -->
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
       d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m5-9v9m4-9v9m4-9l2 9" />
   </svg>
