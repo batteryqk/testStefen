@@ -76,7 +76,6 @@
         <script src="{{ asset('assets/js/filepond.js') }}"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-
                 file_upload(["#image"], ["image/jpeg", "image/png", "image/jpg, image/webp, image/svg"]);
             });
         </script>

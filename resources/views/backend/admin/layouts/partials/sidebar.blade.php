@@ -62,6 +62,12 @@
             <x-admin.navlink type="dropdown" icon="users" name="Product Management" :page_slug="$active"
                 :items="[
                     [
+                        'name' => 'Product',
+                        'route' => route('pm.product.index'),
+                        'icon' => '',
+                        'active' => 'product',
+                    ],
+                    [
                         'name' => 'Category',
                         'route' => route('pm.category.index'),
                         'icon' => '',
@@ -71,7 +77,7 @@
         </nav>
     </div>
      <!-- User Profile -->
-     <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 dark:border-gray-700">
+     {{-- <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200 dark:border-gray-700">
          <div class="flex items-center space-x-3 transition-all duration-20 ease-in-out"
              :class="{ 'hidden': !sidebar_expanded }">
              <div>
@@ -83,5 +89,5 @@
                  <p class="text-xs text-gray-500 dark:text-gray-400">admin@company.com</p>
              </div>
          </div>
-     </div>
+     </div> --}}
  </aside>
