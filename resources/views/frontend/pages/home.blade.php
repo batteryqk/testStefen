@@ -23,18 +23,19 @@
 </section>
 <section>
     <div class="section-container flex justify-center items-center min-h-[697px] bg-white py-16">
-        <div class="w-full max-w-[1270px]">
+        <div class="w-full max-w-[1500px]">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Destaques</h2>
                 <p class="text-gray-500 mb-8 text-lg">Descubra nossa coleção premium de roupas fitness</p>
             </div>
+
             <x-frontend.product />
            
         </div>
     </div>    
 </section>
 <section class="flex justify-center items-center min-h-[697px] bg-white py-16">
-    <div class="w-full max-w-[1270px] flex flex-col md:flex-row  rounded-lg overflow-hidden">
+    <div class="w-full max-w-[1500px] flex flex-col md:flex-row  rounded-lg overflow-hidden">
         <!-- Image Side -->
        <div class="md:w-1/2 w-full h-[350px] md:h-[697px] px-4 lg:px-8">
          <img src="{{ asset('assets/frontend/imagens/foto.jpg') }}"
