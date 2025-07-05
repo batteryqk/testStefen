@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\Admin\AdminManagement\AdminController;
 use App\Http\Controllers\Backend\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Backend\Admin\ProductManagement\CategoryController;
+use App\Http\Controllers\Backend\Admin\ProductManagement\ProductController;
 use App\Http\Controllers\Backend\Admin\UserManagement\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,17 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
       Route::get('/trash/bin', 'trash')->name('trash');
       Route::get('/restore/{category}', 'restore')->name('restore');
       Route::delete('/permanent-delete/{category}', 'permanentDelete')->name('permanent-delete');
+    });
+
+
+    Route::resource('product', ProductController::class);
+    Route::controller(ProductController::class)->name('product.')->prefix('product')->group(function () {
+      Route::post('/show/{product}', 'show')->name('show');
+      Route::get('/status/{product}', 'status')->name('status');
+      Route::get('/is-featured/{product}', 'isFeatured')->name('is-featured');
+      Route::get('/trash/bin', 'trash')->name('trash');
+      Route::get('/restore/{product}', 'restore')->name('restore');
+      Route::delete('/permanent-delete/{product}', 'permanentDelete')->name('permanent-delete');
     });
   });
 });

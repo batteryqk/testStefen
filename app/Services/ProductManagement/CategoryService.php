@@ -2,10 +2,13 @@
 
 namespace App\Services\ProductManagement;
 
+use App\Http\Traits\FileManagementTrait;
 use App\Models\Category;
+use Illuminate\Support\Facades\DB;
 
 class CategoryService
 {
+    use FileManagementTrait;
     public function getCategories($orderBy = 'sort_order', $order = 'asc')
     {
         return Category::orderBy($orderBy, $order)->latest();
@@ -18,15 +21,28 @@ class CategoryService
     {
         return Category::onlyTrashed()->find(decrypt($encryptedId));
     }
-    public function createCategory(array $data)
+    public function createCategory(array $data, $file = null)
     {
-        $data['created_by'] = admin()->id;
-        return Category::create($data);
+        return DB::transaction(function () use ($data, $file) {
+            if ($file) {
+                $data['image'] = $this->handleFileUpload($file, 'categories', $data['name']);
+            }
+            $data['status'] = Category::STATUS_ACTIVE;
+            $data['created_by'] = admin()->id;
+            return Category::create($data);
+        });
     }
-    public function updateCategory(Category $category, array $data)
+    public function updateCategory(Category $category, array $data,$file = null)
     {
-        $data['updated_by'] = admin()->id;
-        return $category->update($data);
+        return DB::transaction(function () use ($category, $data, $file) {
+            if ($file) {
+                $data['image'] = $this->handleFileUpload($file, 'categories', $data['name']);
+                $this->fileDelete($category->image);
+            }
+
+            $data['updated_by'] = admin()->id;
+            return $category->update($data);
+        });
     }
     public function deleteCategory(Category $category)
     {
