@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\Backend\Admin\AdminController;
+use App\Http\Controllers\Backend\Admin\AdminManagement\AdminController;
 use App\Http\Controllers\Backend\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Backend\Admin\ProductManagement\CategoryController;
+use App\Http\Controllers\Backend\Admin\UserManagement\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () {
@@ -17,6 +19,27 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
       Route::get('/trash/bin', 'trash')->name('trash');
       Route::get('/restore/{admin}', 'restore')->name('restore');
       Route::delete('/permanent-delete/{admin}', 'permanentDelete')->name('permanent-delete');
+    });
+  });
+  Route::group(['as' => 'um.', 'prefix' => 'user-management'], function () {
+    Route::resource('user', UserController::class);
+    Route::controller(UserController::class)->name('user.')->prefix('user')->group(function () {
+      Route::post('/show/{user}', 'show')->name('show');
+      Route::get('/status/{user}', 'status')->name('status');
+      Route::get('/trash/bin', 'trash')->name('trash');
+      Route::get('/restore/{user}', 'restore')->name('restore');
+      Route::delete('/permanent-delete/{user}', 'permanentDelete')->name('permanent-delete');
+    });
+  });
+
+  Route::group(['as'=>'pm.', 'prefix' => 'product-management'], function () {
+    Route::resource('category', CategoryController::class);
+    Route::controller(CategoryController::class)->name('category.')->prefix('category')->group(function () {
+      Route::post('/show/{category}', 'show')->name('show');
+      Route::get('/status/{category}', 'status')->name('status');
+      Route::get('/trash/bin', 'trash')->name('trash');
+      Route::get('/restore/{category}', 'restore')->name('restore');
+      Route::delete('/permanent-delete/{category}', 'permanentDelete')->name('permanent-delete');
     });
   });
 });
