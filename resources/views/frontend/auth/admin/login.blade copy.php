@@ -2,31 +2,19 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('admin.login') }}" class="bg-black p-10 rounded-md shadow-xl">
+    <form method="POST" action="{{ route('admin.login') }}">
         @csrf
         <h1>{{ __('Admin Login')}}</h1>
-
-        <!-- Using Icon   -->
-                        <div class="flex justify-center mb-8">
-                                <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center pr-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-12 h-12 text-black">
-                                               
-                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
-                                           
-                </svg>
-                                    </div>
-                            </div>
-
         <!-- Email Address -->
         <div>
-            <x-input-label class="text-white" for="email" :value="__('Email')" />
+            <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label class="text-white" for="password" :value="__('Password')" />
+            <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
                 type="password"
@@ -40,13 +28,13 @@
         <div class="block mt-4">
             <label for="remember_me" class="inline-flex items-center">
                 <input id="remember_me" type="checkbox" class="rounded-sm border-gray-300 text-indigo-600 shadow-xs focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-white">{{ __('Remember me') }}</span>
+                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
             </label>
         </div>
 
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('admin.password.request'))
-            <a class="underline text-sm text-white hover:text-gray-900 rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('admin.password.request') }}">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('admin.password.request') }}">
                 {{ __('Forgot your password?') }}
             </a>
             @endif
