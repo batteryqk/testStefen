@@ -15,9 +15,20 @@ class User extends AuthBaseModel implements MustVerifyEmail
      * @var list<string>
      */
     protected $fillable = [
+        'sort_order',
+        'image',
         'name',
         'email',
         'password',
+        'email_verified_at',
+        'status',
+        
+        'creater_id',
+        'creater_type',
+        'updater_id',
+        'updater_type',
+        'deleter_id',
+        'deleter_type',
     ];
 
     /**
