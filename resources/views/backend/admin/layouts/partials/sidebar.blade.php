@@ -50,6 +50,15 @@
                         'active' => 'admin',
                     ],
                 ]" />
+            <x-admin.navlink type="dropdown" icon="users" name="User Management" :page_slug="$active"
+                :items="[
+                    [
+                        'name' => 'User',
+                        'route' => route('um.user.index'),
+                        'icon' => 'user',
+                        'active' => 'user',
+                    ],
+                ]" />
         </nav>
     </div>
      <!-- User Profile -->
