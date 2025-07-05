@@ -2,59 +2,158 @@
     <x-slot name="title">Home</x-slot>
     <x-slot name="page_slug">home</x-slot>
 
+    <!-- Hero Section -->
+    <section class="relative  sm:w-full">
+        <img src="{{ asset('assets/frontend/imagens/shop.png') }}" alt="Fitness BG" class="w-[100%] h-[70vh] object-cover"> <!-- Replace with your background -->
+        <div class="absolute inset-0 bg-opacity-50 flex items-center justify-end">
+            <div class="text-center">
+                <h1 class="text-white text-[100px] font-extrabold leading-none uppercase tracking-tight">
+                    <span class="block -mb-10 sm:mx-auto mx-auto mr-6">Treina</span>
+                    <span class="block text-[100px] sm:mx-auto mx-auto mr-7 mt-10">Mais</span>
+                </h1>
+                <p class="text-red-600 sm:text-4xl mx-auto lg:text-4xl lg:mr-20 sm:mx-auto  font-semibold">
+                    O que fazer para <br>
+                    melhorar o teu progresso
+                </p>
+            </div>
+        </div>
+    </section>
 
+    <div class="p-10 bg-gray-50 dark:bg-gray-900 flex items-center justify-center px-4">
 
-
-<section class="relative ">
-    <img src="{{ asset('assets/frontend/imagens/foto.jpg') }}" alt="About Us Background" class="w-full h-[655px] object-cover">
-    <div class="absolute inset-0 bg-black opacity-40"></div>
-    <div class="absolute left-1/2 top-[65%] md:left-20 md:top-1/2 transform -translate-x-1/2 md:-translate-x-0 -translate-y-1/2 z-10 text-center md:text-left">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">VALGRIT</h1>
-        <p class="text-xl md:text-2xl font-semibold mb-6 text-white">A NOSSA MISSAO</p>
-        <a href="#saiba-mais" class="inline-block  hover:bg-red-700 hover:text-white text-text-primary font-semibold text-3xl px-5 py-2 rounded shadow transition duration-300">
-            SAIBA MAIS
-        </a>
-    </div>
-</section>
-
-
-<section class="bg-white py-20" id="development">
-    <x-frontend.slide/>
-</section>
-<section>
-    <div class="section-container flex justify-center items-center min-h-[697px] bg-white py-16">
-        <div class="w-full max-w-[1500px]">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4">Destaques</h2>
-                <p class="text-gray-500 mb-8 text-lg">Descubra nossa coleção premium de roupas fitness</p>
+        <div class="max-w-md w-full space-y-8">
+            <div class="text-center">
+                <h1 class="text-3xl text-text-primary font-bold  dark:text-white mb-2">
+                    {{ config('app.name', 'Dashboard') }}
+                </h1>
+                <p class=" dark:text-gray-300">
+                    @if(Auth::guard('admin')->check())
+                    Welcome, Admin!
+                    @elseif(Auth::check()) {{-- Check for regular user login --}}
+                    Welcome, User!
+                    @else
+                    Please select your login portal
+                    @endif
+                </p>
             </div>
 
-            <x-frontend.product />
-           
-        </div>
-    </div>    
-</section>
-<section class="flex justify-center items-center min-h-[697px] bg-white py-16">
-    <div class="w-full max-w-[1500px] flex flex-col md:flex-row  rounded-lg overflow-hidden">
-        <!-- Image Side -->
-       <div class="md:w-1/2 w-full h-[350px] md:h-[697px] px-4 lg:px-8">
-         <img src="{{ asset('assets/frontend/imagens/foto.jpg') }}"
-         alt="Beautiful Design"
-         class="w-full h-full object-cover rounded-xl">
-       </div>
+            <div class="space-y-4">
+                @if(Auth::guard('admin')->check())
+                <a href="{{ url('/admin/dashboard') }}" class="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-indigo-500 dark:hover:border-indigo-400">
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-indigo-100 dark:bg-indigo-900 rounded-lg">
+                            <i data-lucide="layout-dashboard" class="w-6 h-6 text-indigo-600 dark:text-indigo-300"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Go to Admin Dashboard</h2>
+                            <p class="text-gray-600 dark:text-gray-400">Access your admin panel</p>
+                        </div>
+                        <div class="ml-auto text-indigo-600 dark:text-indigo-400">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </a>
 
+                <form method="POST" action="{{ url('/admin/logout') }}" class="block">
+                    @csrf
+                    <button type="submit" class="w-full p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 text-left">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 bg-red-100 dark:bg-red-900 rounded-lg">
+                                <i data-lucide="log-out" class="w-6 h-6 text-red-600 dark:text-red-300"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Logout from Admin</h2>
+                                <p class="text-gray-600 dark:text-gray-400">Sign out of your admin account</p>
+                            </div>
+                            <div class="ml-auto text-red-600 dark:text-red-400">
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </button>
+                </form>
 
-        <!-- Content Side -->
-        <div class="md:w-1/2 w-full flex flex-col justify-start items-center md:items-start p-10 bg-gradient-to-br from-white to-gray-100">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-left">Design Impressionante</h1>
-            <p class="text-lg md:text-xl text-gray-600 mb-4 text-left">
-            Descubra a beleza e sofisticação em cada detalhe. Nossa coleção premium combina conforto, estilo e inovação para elevar seu visual fitness ao próximo nível.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem labore cumque optio! Nostrum minus eum pariatur repudiandae, aperiam debitis consequuntur veritatis deserunt ea vel blanditiis, assumenda optio voluptate beatae. Earum.
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores rerum vel sint voluptatum quaerat? Reiciendis, eius! Illo, inventore ad. Nostrum omnis eos itaque iste quasi blanditiis nihil modi dolores quae.
-            </p>
+                @elseif(Auth::check()) {{-- If a regular user is logged in --}}
+                <a href="{{ url('user/dashboard') }}" class="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400">
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
+                            <i data-lucide="user" class="w-6 h-6 text-blue-600 dark:text-blue-300"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Go to User Dashboard</h2>
+                            <p class="text-gray-600 dark:text-gray-400">Access your user panel</p>
+                        </div>
+                        <div class="ml-auto text-blue-600 dark:text-blue-400">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <form method="POST" action="{{ url('/logout') }}" class="block">
+                    @csrf
+                    <button type="submit" class="w-full p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-red-500 dark:hover:border-red-400 text-left">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 bg-red-100 dark:bg-red-900 rounded-lg">
+                                <i data-lucide="log-out" class="w-6 h-6 text-red-600 dark:text-red-300"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Logout</h2>
+                                <p class="text-gray-600 dark:text-gray-400">Sign out of your account</p>
+                            </div>
+                            <div class="ml-auto text-red-600 dark:text-red-400">
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </div>
+                        </div>
+                    </button>
+                </form>
+
+                @else {{-- If neither admin nor regular user is logged in --}}
+                <a href="{{ url('/login') }}" class="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400">
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
+                            <i data-lucide="user" class="w-6 h-6 text-blue-600 dark:text-blue-300"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Log In</h2>
+                            <p class="text-gray-600 dark:text-gray-400">Access your User dashboard</p>
+                        </div>
+                        <div class="ml-auto text-blue-600 dark:text-blue-400">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{ url('/register') }}" class="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400">
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-blue-100 dark:bg-blue-900 rounded-lg">
+                            <i data-lucide="user-plus" class="w-6 h-6 text-blue-600 dark:text-blue-300"></i> {{-- Changed icon for register --}}
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Register</h2>
+                            <p class="text-gray-600 dark:text-gray-400">Make a new account</p>
+                        </div>
+                        <div class="ml-auto text-blue-600 dark:text-blue-400">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="{{ url('/admin/login') }}" class="block p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-200 dark:border-gray-700 hover:border-indigo-500 dark:hover:border-indigo-400">
+                    <div class="flex items-center space-x-4">
+                        <div class="p-3 bg-indigo-100 dark:bg-indigo-900 rounded-lg">
+                            <i data-lucide="user-cog" class="w-6 h-6 text-indigo-600 dark:text-indigo-300"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-semibold text-gray-900 dark:text-white">Admin Login</h2>
+                            <p class="text-gray-600 dark:text-gray-400">Access admin control panel</p>
+                        </div>
+                        <div class="ml-auto text-indigo-600 dark:text-indigo-400">
+                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                </a>
+                @endif
+            </div>
         </div>
     </div>
-</section>
 
 </x-frontend::layout>
-
