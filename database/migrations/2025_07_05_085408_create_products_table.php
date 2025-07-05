@@ -24,11 +24,14 @@ return new class extends Migration
             $table->string('stock_no')->unique();
             $table->text('description')->nullable();
             $table->decimal('price', 10, 2);
+            $table->unsignedBigInteger('category_id');
             $table->tinyInteger('status')->default(Product::STATUS_ACTIVE);
             $table->boolean('is_featured')->default(Product::NOT_FEATURED);
             $table->timestamps();
             $table->softDeletes();
             $this->addAdminAuditColumns($table);
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
 
             $table->index(['slug', 'status']);
             $table->index(['is_featured', 'status']);

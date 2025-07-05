@@ -3,24 +3,29 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
-
-class Product extends Model
+use App\Models\BaseModel;
+class Product extends BaseModel
 {
-    protected $filallable = [
-        'name',
-        'description',
-        'price',
-        'status',
-        'is_featured',
-        'sort_order',
-        'slug',
-        'stock_no',
+    protected $fillable = [
+    'name',
+    'description',
+    'price',
+    'status',
+    'is_featured',
+    'sort_order',
+    'slug',
+    'stock_no',
+    'category_id',
+    'created_by',
+    'updated_by',
+    'deleted_by',
+];
 
-        'created_by',
-        'updated_by',
-        'deleted_by',
-    ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
 
          public function __construct(array $attributes = [])
     {
@@ -36,7 +41,6 @@ class Product extends Model
             'featured_color',
             'featured_btn_label',
             'featured_btn_color',
-            'featured_labels',
 
         ]);
     }
@@ -92,22 +96,22 @@ class Product extends Model
     }
     public function getFeaturedLabelAttribute()
     {
-        return self::featuredList()[$this->status];
+        return self::featuredList()[$this->is_featured];
     }
 
     public function getFeaturedColorAttribute()
     {
-        return $this->status == self::FEATURED ? 'badge-success' : 'badge-error';
+        return $this->is_featured == self::FEATURED ? 'badge-info' : 'badge-error';
     }
 
     public function getFeaturedBtnLabelAttribute()
     {
-        return $this->status == self::FEATURED ? self::statusList()[self::NOT_FEATURED] : self::statusList()[self::FEATURED];
+        return $this->is_featured == self::FEATURED ? self::statusList()[self::NOT_FEATURED] : self::statusList()[self::FEATURED];
     }
 
     public function getFeaturedBtnColorAttribute()
     {
-        return $this->status == self::FEATURED ? 'btn-error' : 'btn-success';
+        return $this->is_featured == self::FEATURED ? 'btn-error' : 'btn-success';
     }
     public function scopeFeatured(Builder $query): Builder
     {
