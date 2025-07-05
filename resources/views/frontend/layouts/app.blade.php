@@ -11,6 +11,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
  <script>
         // On page load, immediately apply theme from localStorage to prevent flash
         (function() {
@@ -52,6 +53,9 @@
             {{ $slot }}
 
         </main>
+
+        {{-- footer --}}
+        <x-frontend.footer />
     </div>
       <script src="{{ asset('assets/js/lucide-icon.js') }}"></script>
     <script>
@@ -123,6 +127,7 @@
         }
         
     </script>
+    <script src="{{ asset('frontend/js/header.js') }}"></script>
     @stack('js')
 </body>
 
