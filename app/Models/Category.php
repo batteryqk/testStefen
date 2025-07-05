@@ -8,6 +8,7 @@ class Category extends BaseModel
 {
 
     protected $fillable = [
+        'sort_order',
         'name',
         'slug',
         'status',
@@ -31,7 +32,6 @@ class Category extends BaseModel
             'modified_image',
         ]);
     }
-
     public const STATUS_ACTIVE = 1;
     public const STATUS_INACTIVE = 0;
 

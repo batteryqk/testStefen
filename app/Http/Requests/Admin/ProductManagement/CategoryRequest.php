@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\UserManagement;
+namespace App\Http\Requests\Admin\ProductManagement;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UserRequest extends FormRequest
+class CategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -20,24 +19,28 @@ class UserRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-  public function rules(): array
+    public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'min:3'],
+            'name' => 'required|string|min:3',
+            'description' => 'nullable|string',
             'image' => 'nullable|image',
         ] + ($this->isMethod('POST') ? $this->store() : $this->update());
     }
+
     protected function store(): array
     {
         return [
-            'email' => ['required', 'string', 'email', Rule::unique('users', 'email')],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'name' => 'required|string|unique:categories,name',
+            'slug' => 'required|string|unique:categories,slug',
         ];
     }
-    public function update(): array
+    protected function update(): array
     {
         return [
-            'email' => ['required', 'string', 'email', Rule::unique('users', 'email')->ignore(decrypt($this->route('user')))],
+            'name' => 'required|string|unique:categories,name,' . decrypt($this->route('category')),
+            'slug' => 'required|string|unique:categories,slug,' . decrypt($this->route('category')),
         ];
     }
 }
+

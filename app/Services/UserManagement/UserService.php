@@ -54,7 +54,10 @@ class UserService
 
     public function delete(User $user): void
     {
-        $user->update(['deleter_id' => user()->id, 'deleter_type' => get_class(user())]);
+        $user->update([
+            'deleter_id' => admin()->id,
+            'deleter_type' => get_class(admin())
+        ]);
         $this->fileDelete($user->image);
         $user->delete();
     }

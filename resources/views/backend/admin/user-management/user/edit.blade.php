@@ -23,7 +23,8 @@
                     <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
                         <!-- Name -->
                         <div class="space-y-2">
-                            <p class="label">{{ __('Name') }}</p>
+                            <p class="label">{{ __('Name') }}
+                                <span class="text-red-500">*</span></p>
                             <label class="input flex items-center gap-2">
 
                                 <input type="text" placeholder="Name" name="name" value="{{ $user->name }}"
@@ -34,7 +35,8 @@
 
                         <!-- Email -->
                         <div class="space-y-2">
-                            <p class="label">{{ __('Email') }}</p>
+                            <p class="label">{{ __('Email') }}
+                                <span class="text-red-500">*</span></p>
                             <label class="input flex items-center gap-2">
 
                                 <input type="email" name="email" value="{{ $user->email }}"
@@ -45,7 +47,8 @@
 
                         <!-- Password -->
                         <div class="space-y-2">
-                            <p class="label">{{ __('Password') }}</p>
+                            <p class="label">{{ __('Password') }}
+                                <span class="text-red-500">*</span></p>
                             <label class="input flex items-center gap-2">
                            
                                 <input type="password" name="password" placeholder="Password" class="flex-1" />
@@ -55,7 +58,8 @@
 
                         <!-- Confirm Password -->
                         <div class="space-y-2">
-                            <p class="label">{{ __('Confirm Password') }}</p>
+                            <p class="label">{{ __('Confirm Password') }}
+                                <span class="text-red-500">*</span></p>
                             <label class="input flex items-center gap-2">
                             
                                 <input type="password" name="password_confirmation" placeholder="Confirm Password"
@@ -63,6 +67,7 @@
                             </label>
                             <x-input-error class="mt-2" :messages="$errors->get('password_confirmation')" />
                         </div>
+                        {{-- Image --}}
                         <div class="space-y-2 sm:col-span-2">
                             <p class="label">{{ __('Image') }}</p>
                             <input type="file" name="image" class="filepond form-control" id="image"

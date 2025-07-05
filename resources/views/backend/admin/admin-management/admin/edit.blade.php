@@ -23,7 +23,9 @@
                     <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
                         <!-- Name -->
                         <div class="space-y-2">
-                            <p class="label">{{ __('Name') }}</p>
+                            <p class="label">{{ __('Name') }}
+                                <span class="text-red-500">*</span>
+                            </p>
                             <label class="input flex items-center gap-2">
                                 <input type="text" placeholder="Name" name="name" value="{{ $admin->name }}"
                                     class="flex-1" />
@@ -33,7 +35,9 @@
 
                         <!-- Email -->
                         <div class="space-y-2">
-                            <p class="label">{{ __('Email') }}</p>
+                            <p class="label">{{ __('Email') }}
+                                <span class="text-red-500">*</span>
+                            </p>
                             <label class="input flex items-center gap-2">
                                 <input type="email" name="email" value="{{ $admin->email }}"
                                     placeholder="example@gmail.com" class="flex-1" />
@@ -43,7 +47,9 @@
 
                         <!-- Password -->
                         <div class="space-y-2">
-                            <p class="label">{{ __('Password') }}</p>
+                            <p class="label">{{ __('Password') }}
+                                <span class="text-red-500">*</span>
+                            </p>
                             <label class="input flex items-center gap-2">
                                 <input type="password" name="password" placeholder="Password" class="flex-1" />
                             </label>
@@ -52,7 +58,9 @@
 
                         <!-- Confirm Password -->
                         <div class="space-y-2">
-                            <p class="label">{{ __('Confirm Password') }}</p>
+                            <p class="label">{{ __('Confirm Password') }}
+                                <span class="text-red-500">*</span>
+                            </p>
                             <label class="input flex items-center gap-2">
                                 <input type="password" name="password_confirmation" placeholder="Confirm Password"
                                     class="flex-1" />
