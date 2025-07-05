@@ -78,7 +78,7 @@
   --font-inter: 'Inter', sans-serif;
 
 
- 
+
   /* ===================================  Colors =================================== */
 
   /* Background Colors */
@@ -240,3 +240,20 @@
   .btn-primary {
     @apply bg-primary-500 text-white hover:bg-primary-600;
   } */
+/* .swiper-button svg,
+.swiper-button i {
+    @apply w-full;
+} */
+
+.swiper-button {
+  @apply after:content-none text-text-primary w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center transition-all duration-300 ease-linear;
+}
+
+/* .swiper-pagination-bullet {
+    @apply w-2 h-2;
+} */
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply relative !mx-3;
+  @apply after:content-[''] after:absolute after:w-[250%] after:h-[250%] after:bg-transparent after:border-2 after:border-t-transparent after:border-bg-primary after:rounded-full after:top-1/2 after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:z-[1];
+}
