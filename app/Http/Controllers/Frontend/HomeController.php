@@ -16,4 +16,9 @@ class HomeController extends Controller
   {
     return view('frontend.pages.detail');
   }
+
+  public function shop()
+  {
+    return view('frontend.pages.shop');
+  }
 }
