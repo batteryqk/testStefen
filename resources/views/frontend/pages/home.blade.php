@@ -3,21 +3,29 @@
     <x-slot name="page_slug">home</x-slot>
 
     <!-- Hero Section -->
-    <section class="relative  sm:w-full">
-        <img src="{{ asset('assets/frontend/imagens/shop.png') }}" alt="Fitness BG" class="w-[100%] h-[70vh] object-cover"> <!-- Replace with your background -->
-        <div class="absolute inset-0 bg-opacity-50 flex items-center justify-end">
-            <div class="text-center">
-                <h1 class="text-white text-[100px] font-extrabold leading-none uppercase tracking-tight">
-                    <span class="block -mb-10 sm:mx-auto mx-auto mr-6">Treina</span>
-                    <span class="block text-[100px] sm:mx-auto mx-auto mr-7 mt-10">Mais</span>
+
+
+
+
+    <section class="relative w-full">
+        <img src="{{ asset('assets/frontend/imagens/shop.png') }}" alt="Fitness BG"
+            class="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] object-cover" />
+
+        <div class="absolute inset-0  bg-opacity-50 flex items-center justify-center sm:justify-end px-4 sm:px-8">
+            <div class="text-center sm:text-right max-w-[90%]">
+                <h1 class="text-white text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] font-extrabold leading-none uppercase tracking-tight">
+                    <span class="block -mb-4">Treina</span>
+                    <span class="block mt-4">Mais</span>
                 </h1>
-                <p class="text-red-600 sm:text-4xl mx-auto lg:text-4xl lg:mr-20 sm:mx-auto  font-semibold">
-                    O que fazer para <br>
+
+                <p class="text-red-600 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mt-4 sm:mt-6">
+                    O que fazer para <br />
                     melhorar o teu progresso
                 </p>
             </div>
         </div>
     </section>
+
 
     <div class="p-10 bg-gray-50 dark:bg-gray-900 flex items-center justify-center px-4">
 
