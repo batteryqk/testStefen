@@ -18,20 +18,25 @@ class HomeController extends Controller
   public function detail(string $slug)
   {
     $data['product'] = Product::where('slug', $slug)->first();
-    $data['related_products'] = collect();
+    // $data['related_products'] = collect();
 
-    if ($data['product'] && $data['product']->category) {
-      $data['related_products'] = $data['product']->category->products
-        ->where('id', '!=', $data['product']->id)
-        ->values();
-    }
+    // if ($data['product'] && $data['product']->category) {
+    //   $data['related_products'] = $data['product']->category->products
+    //     ->where('id', '!=', $data['product']->id)
+    //     ->values();
+    // }
 
     return view('frontend.pages.detail', $data);
   }
 
   public function shop()
   {
-    $prods = Product::latest()->take(12)->get();
+    $prods = Product::with(['primaryImage',])->latest()->paginate(12)->all();
     return view('frontend.pages.shop', compact('prods'));
+  }
+
+  public function product()
+  {
+    return view('frontend.pages.product',);
   }
 }

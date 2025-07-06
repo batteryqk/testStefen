@@ -30,26 +30,26 @@
 
                 <div class="flex-grow flex justify-center items-center">
                     <div class="md:hidden">
-                        <a href="#">
+                        <a href="/">
                             <img src="{{ asset('frontend/images/logo.PNG') }}" alt="Valgrit Logo" class="h-10">
                         </a>
                     </div>
                     <div class="hidden md:flex items-baseline space-x-10">
-                        <a href="/"
+                        <a href="{{ route('f.home') }}"
                             class="group relative nav-link text-text-black hover:text-text-primary px-3 py-2 rounded-md text-2xl font-bold transition-colors duration-300 ease-in-out"
                             data-page="início">
                             Início
                             <span
                                 class="absolute bottom-0 left-0 w-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out group-hover:w-full"></span>
                         </a>
-                        <a href="#"
+                        <a href="{{ route('f.products') }}"
                             class="group relative nav-link text-text-black hover:text-text-primary px-3 py-2 rounded-md text-2xl font-bold transition-colors duration-300 ease-in-out"
                             data-page="produtos">
                             Produtos
                             <span
                                 class="absolute bottom-0 left-0 w-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out group-hover:w-full"></span>
                         </a>
-                        <a href="#"
+                        <a href="{{ route('f.shop') }}"
                             class="group relative nav-link text-text-black hover:text-text-primary px-3 py-2 rounded-md text-2xl font-bold transition-colors duration-300 ease-in-out"
                             data-page="loja">
                             Loja
@@ -93,13 +93,13 @@
 
         <div id="mobile-menu" class="md:hidden hidden">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#"
+                <a href="{{ route('f.home') }}"
                     class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium"
                     data-page="início">Início</a>
-                <a href="#"
+                <a href="{{ route('f.products') }}"
                     class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium"
                     data-page="produtos">Produtos</a>
-                <a href="#"
+                <a href="{{ route('f.shop') }}"
                     class="nav-link text-text-black hover:text-text-primary hover:underline deuration-300 hover:bg-gray-50 block px-3 py-2 rounded-md text-base font-medium"
                     data-page="loja">Loja</a>
             </div>
