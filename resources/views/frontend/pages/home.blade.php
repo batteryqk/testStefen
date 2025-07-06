@@ -35,7 +35,7 @@
     </div>    
 </section>
 <section class="flex justify-center items-center min-h-[697px] bg-white py-16">
-    <div class="w-full max-w-[1500px] flex flex-col md:flex-row  rounded-lg overflow-hidden">
+    <div class="w-full max-w-[1500px] flex flex-col md:flex-row items-center rounded-lg overflow-hidden">
         <!-- Image Side -->
        <div class="md:w-1/2 w-full h-[350px] md:h-[697px] px-4 lg:px-8">
          <img src="{{ asset('assets/frontend/imagens/foto.jpg') }}"
@@ -45,22 +45,19 @@
 
 
         <!-- Content Side -->
-        <div class="md:w-1/2 w-full flex flex-col justify-start items-center md:items-start p-10 bg-gradient-to-br from-white to-gray-100">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-left">Experimente a Diferença da Valgrit: Qualidade Que Se Sente em Cada Fibra!</h1>
-            <p class="text-lg md:text-xl text-gray-600 mb-4 text-left">
+        <div class="md:w-1/2 w-full flex flex-col mb-16 justify-start items-center md:items-start p-10 bg-gradient-to-br from-white to-gray-100">
+            <h1 class="text-4xl md:text-5xl  text-black mb-6 text-left">Experimente a Diferença da Valgrit: Qualidade Que Se Sente em Cada Fibra!</h1>
+            <p class="text-lg md:text-xl text-black mb-4 text-left">
            Na Valgrit, não vendemos apenas roupa desportiva – entregamos uma experiência de performance e conforto incomparáveis.
   Cada peça é cuidadosamente desenhada e fabricada com os melhores materiais, garantindo que se sinta no seu melhor, quer esteja a superar os seus limites no ginásio ou a desfrutar de uma corrida ao ar livre.
 
-Porque Escolher Valgrit?
+ <br/>
+        <strong>Porque Escolher Valgrit?</strong><br/>
 
-Durabilidade Superior: Feita para durar, a nossa roupa resiste ao desgaste do treino intenso e às lavagens frequentes, mantendo a sua forma e cor como novas por muito mais tempo. Diga adeus à roupa que cede ou desbota após algumas utilizações!
-
-Conforto Inigualável: Selecionamos tecidos respiráveis e de toque suave que se movem consigo, proporcionando liberdade total de movimentos e mantendo a sua pele fresca e seca, mesmo nos treinos mais exigentes. Sinta a diferença de um conforto que o impulsiona.
-
-Estilo Que Inspira: Com designs modernos e cortes que realçam a sua silhueta, a roupa Valgrit fará com que se sinta confiante e motivado. Porque sabemos que quando se sente bem, treina melhor.
-
-Investimento Inteligente: Ao escolher Valgrit, está a investir em peças que o acompanharão nas suas jornadas desportivas por anos. Menos compras, mais treinos, mais resultados.
-
+Durabilidade Superior: Feita para durar, a nossa roupa resiste ao desgaste do treino intenso e às lavagens frequentes, mantendo a sua forma e cor como novas por muito mais tempo. Diga adeus à roupa que cede ou desbota após algumas utilizações!<br/>
+Conforto Inigualável: Selecionamos tecidos respiráveis e de toque suave que se movem consigo, proporcionando liberdade total de movimentos e mantendo a sua pele fresca e seca, mesmo nos treinos mais exigentes. Sinta a diferença de um conforto que o impulsiona.<br/>
+Estilo Que Inspira: Com designs modernos e cortes que realçam a sua silhueta, a roupa Valgrit fará com que se sinta confiante e motivado. Porque sabemos que quando se sente bem, treina melhor.<br/>
+Investimento Inteligente: Ao escolher Valgrit, está a investir em peças que o acompanharão nas suas jornadas desportivas por anos. Menos compras, mais treinos, mais resultados.<br/>
   Não se contente com menos. Eleve o seu treino e o seu estilo com a Valgrit. Sinta a qualidade, viva a performance! Visite a nossa loja online e descubra a peça perfeita para si.
             </p>
         </div>
