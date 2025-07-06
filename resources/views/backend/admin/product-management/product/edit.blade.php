@@ -84,6 +84,22 @@
                             </label>
                             <x-input-error class="mt-2" :messages="$errors->get('stock_no')" />
                         </div>
+                        {{-- Size --}}
+                        <div class="space-y-2">
+                            <p class="label">
+                                {{ __('Available Size') }} <span class="text-red-500">*</span>
+                            </p>
+                            <select name="attribute_values[]" class="select select2" multiple>
+                                @foreach (App\Models\ProductAttribute::sizeList() as $key => $size)
+                                    <option value="{{ $key }}"
+                                        {{ in_array($key, $product->attribute_values ?? []) ? 'selected' : '' }}>
+                                        {{ $size }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            <x-input-error class="mt-2" :messages="$errors->get('attribute_values')" />
+                        </div>
+
                         {{-- Description --}}
                         <div class="space-y-2 sm:col-span-2">
                             <p class="label">{{ __('Description') }}</p>

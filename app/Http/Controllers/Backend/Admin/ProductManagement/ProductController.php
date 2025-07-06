@@ -6,12 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ProductManagement\ProductRequest;
 use App\Http\Traits\AuditRelationTraits;
 use App\Models\Category;
+use App\Models\ProductAttribute;
 use App\Services\ProductManagement\CategoryService;
 use App\Services\ProductManagement\ProductService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Yajra\DataTables\Facades\DataTables;
 
 class ProductController extends Controller
@@ -130,6 +132,8 @@ class ProductController extends Controller
         $data['category_name'] = $data->category?->name;
         $data['creater_name'] = $this->creater_name($data);
         $data['updater_name'] = $this->updater_name($data);
+        $data['image'] = $data->primaryImage->first()->modified_image;
+        $data['productAttributes'] = $data->productAttributes->select(['attribute_value']);
         return response()->json($data);
     }
 
@@ -140,6 +144,10 @@ class ProductController extends Controller
     {
         $data['product'] = $this->productService->getProduct($id);
         $data['product']->load(['images', 'primaryImage', 'nonPrimayImages', 'productAttributes']);
+        $data['product']->attribute_values = $data['product']->productAttributes
+            ->where('attribute_name', ProductAttribute::SIZE_ATTRIBUTE)
+            ->pluck('attribute_value')
+            ->toArray();
         $data['categories'] = $this->categoryService->getCategories()->select(['id', 'name'])->get();
         return view('backend.admin.product-management.product.edit', $data);
     }

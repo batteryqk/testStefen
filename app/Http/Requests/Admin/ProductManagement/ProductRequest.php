@@ -26,9 +26,9 @@ class ProductRequest extends FormRequest
             'price' => 'required|numeric',
             'category_id' => 'required|exists:categories,id',
             'description' => 'nullable|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,webp,svg',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp,svg|max:5120',
             'images' => 'nullable|array',
-            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,webp,svg',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,webp,svg|max:2048',
             'attribute_values' => 'nullable|array',
             'attribute_values.*' => 'nullable|string',
         ] + ($this->isMethod('POST') ? $this->store() : $this->update());

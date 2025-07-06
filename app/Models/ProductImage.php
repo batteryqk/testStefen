@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class ProductImage extends BaseModel
@@ -30,15 +29,7 @@ class ProductImage extends BaseModel
     {
         return $this->belongsTo(Product::class, 'product_id', 'id');
     }
-    // public function scopePrimary(Builder $query): Builder
-    // {
-    //     return $query->where('is_primary', 1);
-    // }
-
-    // public function getModifiedImageAttribute()
-    // {
-    //     return storage_url($this->image);
-    // }
+  
 
     public const IS_PRIMARY = 1;
     public const NOT_PRIMARY = 0;

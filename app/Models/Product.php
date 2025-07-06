@@ -29,6 +29,10 @@ class Product extends BaseModel
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
+   public function productAttributes()
+    {
+        return $this->hasMany(ProductAttribute::class, 'product_id', 'id');
+    }
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -103,7 +107,7 @@ class Product extends BaseModel
 
     public function getFeaturedColorAttribute()
     {
-        return $this->is_featured == self::FEATURED ? 'badge-info' : 'badge-error';
+        return $this->is_featured == self::FEATURED ? 'badge-success' : 'badge-error';
     }
 
     public function getFeaturedBtnLabelAttribute()
@@ -128,10 +132,7 @@ class Product extends BaseModel
     // {
     //     return $this->hasMany(ProductImage::class, 'product_id', 'id');
     // }
-    public function productAttributes()
-    {
-        return $this->hasMany(ProductAttribute::class, 'product_id', 'id');
-    }
+    
 
     // public function primaryImage()
     // {
