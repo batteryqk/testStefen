@@ -2,33 +2,31 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('login') }}" class="bg-[#1c1c1c] p-10 rounded-sm shadow-xl/30">
+    <form method="POST" action="{{ route('login') }}" class="bg-[#1c1c1c]   py-6 px-6 lg:py-20 lg:px-20 rounded-sm shadow-sm">
         @csrf
         {{ __('User Login') }}
 
-        <!-- Using Icon   -->
-                        <div class="flex justify-center mb-8">
-                                <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center pr-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-12 h-12 text-black">
-                                               
-                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
-                                           
+        <!-- User Icon -->
+        <div class="flex justify-center mb-8">
+            <div class="w-24 h-24 bg-black text-white rounded-full border-4 border-white flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-18 w-18 " viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.314 0-10 1.656-10 5v3h20v-3c0-3.344-6.686-5-10-5z" />
                 </svg>
-                                    </div>
-                            </div>
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label class="text-white" for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+            </div>
         </div>
 
+        <!-- Email Address -->
+        <div class="mb-8">
+            <x-input-label class="text-white " for="email" :value="__('Email')" />
+            <x-text-input id="email" class="block mt-1 lg:w-full md:w-full w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-input-error :messages="$errors->get('email')" class="mt-2 " />
+        </div>
+                
         <!-- Password -->
-        <div class="mt-4">
+        <div class="mt-8">
             <x-input-label class="text-white" for="password" :value="__('Password')" />
 
-            <x-text-input id="password" class="block mt-1 w-full"
+            <x-text-input id="password" class="block mt-1 lg:w-full md:w-full w-full"
                 type="password"
                 name="password"
                 required autocomplete="current-password" />
@@ -51,7 +49,7 @@
             </a>
             @endif
 
-            <x-primary-button class="ms-3 bg-red-700!">
+            <x-primary-button class="ms-3 bg-red-600!">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>

@@ -2,20 +2,18 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <form method="POST" action="{{ route('admin.login') }}" class="bg-black p-10 rounded-md shadow-xl">
+    <form method="POST" action="{{ route('admin.login') }}" class="bg-black p-10 rounded-md shadow-sm">
         @csrf
         <h1>{{ __('Admin Login')}}</h1>
 
-        <!-- Using Icon   -->
-                        <div class="flex justify-center mb-8">
-                                <div class="w-24 h-24 bg-white rounded-full flex items-center justify-center pr-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-12 h-12 text-black">
-                                               
-                    <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
-                                           
+        <!-- User Icon -->
+        <div class="flex justify-center mb-8">
+            <div class="w-24 h-24 bg-black text-white rounded-full border-4 border-white flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-18 w-18 " viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zm0 2c-3.314 0-10 1.656-10 5v3h20v-3c0-3.344-6.686-5-10-5z" />
                 </svg>
-                                    </div>
-                            </div>
+            </div>
+        </div>
 
         <!-- Email Address -->
         <div>
