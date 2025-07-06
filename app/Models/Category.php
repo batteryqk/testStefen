@@ -63,7 +63,7 @@ class Category extends BaseModel
     }
     public function getModifiedImageAttribute()
     {
-        return storage_url($this->cover_image);
+        return storage_url($this->image);
     }
     public function scopeActive(Builder $query): Builder
     {
@@ -72,5 +72,10 @@ class Category extends BaseModel
     public function scopeInactive(Builder $query): Builder
     {
         return $query->where('status', self::STATUS_INACTIVE);
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 }

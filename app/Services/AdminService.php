@@ -67,6 +67,9 @@ class AdminService
     public function permanentDelete(string $encryptedId): void
     {
         $admin = $this->getDeletedAdmin($encryptedId);
+          if ($admin->image) {
+            $this->fileDelete($admin->image);
+        }
         $admin->forceDelete();
     }
 
