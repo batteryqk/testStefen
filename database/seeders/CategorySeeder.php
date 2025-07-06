@@ -28,5 +28,35 @@ class CategorySeeder extends Seeder
             'slug' => 'general2',
             'status' => Category::STATUS_ACTIVE,
         ]);
+        Category::create([
+            'name' => 'General3',
+            'slug' => 'general3',
+            'status' => Category::STATUS_ACTIVE,
+        ]);
+        Category::create([
+            'name' => 'General4',
+            'slug' => 'general4',
+            'status' => Category::STATUS_ACTIVE,
+        ]);
+        Category::create([
+            'name' => 'General5',
+            'slug' => 'general5',
+            'status' => Category::STATUS_ACTIVE,
+        ]);
+        Category::create([
+            'name' => 'General6',
+            'slug' => 'general6',
+            'status' => Category::STATUS_ACTIVE,
+        ]);
+        Category::create([
+            'name' => 'General7',
+            'slug' => 'general7',
+            'status' => Category::STATUS_ACTIVE,
+        ]);
+        Category::create([
+            'name' => 'General8',
+            'slug' => 'general8',
+            'status' => Category::STATUS_ACTIVE,
+        ]);
     }
 }
