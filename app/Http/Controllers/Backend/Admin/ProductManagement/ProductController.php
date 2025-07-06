@@ -16,8 +16,8 @@ use Yajra\DataTables\Facades\DataTables;
 
 class ProductController extends Controller
 {
-     use AuditRelationTraits;
-     protected function redirectIndex(): RedirectResponse
+    use AuditRelationTraits;
+    protected function redirectIndex(): RedirectResponse
     {
         return redirect()->route('pm.product.index');
     }
@@ -39,7 +39,7 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-     public function index(Request $request)
+    public function index(Request $request)
     {
         if ($request->ajax()) {
             $query = $this->productService->getProducts();
@@ -50,12 +50,12 @@ class ProductController extends Controller
                 ->editColumn('created_by', fn($product) => $this->creater_name($product))
                 ->editColumn('created_at', fn($product) => $product->created_at_formatted)
                 ->editColumn('action', fn($product) => view('components.admin.action-buttons', ['menuItems' => $this->menuItems($product)])->render())
-                ->rawColumns(['status','category_id', 'is_featured', 'created_by', 'created_at', 'action'])
+                ->rawColumns(['status', 'category_id', 'is_featured', 'created_by', 'created_at', 'action'])
                 ->make(true);
         }
         return view('backend.admin.product-management.product.index');
     }
-     protected function menuItems($model): array
+    protected function menuItems($model): array
     {
         return [
             [
@@ -90,11 +90,15 @@ class ProductController extends Controller
         ];
     }
 
+
     /**
      * Show the form for creating a new resource.
      */
- public function create(): View
+    public function create(): View
     {
+
+        // $data['product'] = $this->productService->getProduct($encryptedId);
+        // $data['product']->load(['images', 'primaryImage']);
         $data['categories'] = $this->categoryService->getCategories()->select(['id', 'name'])->get();
         return view('backend.admin.product-management.product.create', $data);
     }
@@ -104,9 +108,11 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
-         try {
+        try {
             $validated = $request->validated();
-            $this->productService->createProduct($validated);
+            $primaryImage = $request->validated('image') && $request->hasFile('image') ? $request->file('image') : null;
+            $images = $request->validated('images') && $request->hasFile('images') ? $request->file('images') : null;
+            $this->productService->createProduct($validated, $primaryImage, $images);
             session()->flash('success', 'Product created successfully!');
         } catch (\Throwable $e) {
             session()->flash('error', 'Product create failed!');
@@ -118,7 +124,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-   public function show(Request $request, string $id)
+    public function show(Request $request, string $id)
     {
         $data = $this->productService->getProduct($id);
         $data['category_name'] = $data->category?->name;
@@ -153,14 +159,14 @@ class ProductController extends Controller
         }
         return $this->redirectIndex();
     }
-    
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-    try {
+        try {
             $admin = $this->productService->getProduct($id);
             $this->productService->delete($admin);
             session()->flash('success', 'Admin deleted successfully!');
@@ -170,13 +176,13 @@ class ProductController extends Controller
         }
         return $this->redirectIndex();
     }
-      public function trash(Request $request)
+    public function trash(Request $request)
     {
         if ($request->ajax()) {
             $query = $this->productService->getProducts()->onlyTrashed();
 
             return DataTables::eloquent($query)
-               ->editColumn('category_id', fn($book) => $book->category?->name)
+                ->editColumn('category_id', fn($book) => $book->category?->name)
                 ->editColumn('status', fn($product) => "<span class='badge badge-soft {$product->status_color}'>{$product->status_label}</span>")
                 ->editColumn('is_featured', fn($product) => "<span class='badge badge-soft {$product->featured_color}'>{$product->featured_label}</span>")
                 ->editColumn('deleted_by', fn($admin) => $this->deleter_name($admin))
@@ -184,7 +190,7 @@ class ProductController extends Controller
                 ->editColumn('action', fn($admin) => view('components.admin.action-buttons', [
                     'menuItems' => $this->trashedMenuItems($admin),
                 ])->render())
-                ->rawColumns(['category_id','status','is_featured','deleted_by', 'deleted_at', 'action'])
+                ->rawColumns(['category_id', 'status', 'is_featured', 'deleted_by', 'deleted_at', 'action'])
                 ->make(true);
         }
 
@@ -209,7 +215,7 @@ class ProductController extends Controller
 
         ];
     }
-       public function restore(string $id)
+    public function restore(string $id)
     {
         try {
             $this->productService->restore($id);
@@ -232,14 +238,14 @@ class ProductController extends Controller
         }
         return $this->redirectTrashed();
     }
-       public function status(string $id)
+    public function status(string $id)
     {
         $user = $this->productService->getProduct($id);
         $this->productService->toggleStatus($user);
         session()->flash('success', 'Product status updated successfully!');
         return redirect()->back();
     }
-       public function isFeatured(string $id)
+    public function isFeatured(string $id)
     {
         $user = $this->productService->getProduct($id);
         $this->productService->toggleFeatured($user);

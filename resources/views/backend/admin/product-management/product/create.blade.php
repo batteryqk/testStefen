@@ -86,6 +86,18 @@
                             <x-input-error class="mt-2" :messages="$errors->get('description')" />
                         </div>
                     </div>
+                    {{-- image --}}
+                    <div class="space-y-2 sm:col-span-2 mt-3">
+                        <p class="label">{{ __('Primary Image') }}</p>
+                        <input type="file" name="image" class="filepond" id="image"
+                            accept="image/jpeg, image/png, image/jpg, image/webp, image/svg">
+                        <x-input-error class="mt-2" :messages="$errors->get('image')" />
+                    </div>{{-- image --}}
+                    <div class="space-y-2 sm:col-span-2 mt-3">
+                        <p class="label">{{ __('Image') }}</p>
+                        <input type="file" name="images[]" accept="image/jpeg, image/png, image/jpg, image/webp, image/svg"  class="filepond" multiple id="images">
+                        <x-input-error class="mt-2" :messages="$errors->get('image')" />
+                    </div>
                     <div class="flex justify-end mt-5">
                         <x-admin.primary-button>{{ __('Create') }}</x-admin.primary-button>
                     </div>
@@ -97,6 +109,12 @@
         </div>
     </section>
     @push('js')
-        <script src="{{ asset('assets/js/ckEditor5.js') }}"></script>
+        <script src="{{ asset('assets/js/ckEditor5.js') }}"></script>        <script src="{{ asset('assets/js/filepond.js') }}"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                file_upload(["#image"], ["image/jpeg", "image/png", "image/jpg, image/webp, image/svg"]);
+                file_upload(["#images"], ["image/jpeg", "image/png", "image/jpg, image/webp, image/svg"]);
+            });
+        </script>
     @endpush
 </x-admin::layout>

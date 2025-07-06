@@ -23,9 +23,12 @@ class ProductRequest extends FormRequest
     {
         return [
             'name' => 'required|string|min:3',
-            'price'=> 'required|numeric',
+            'price' => 'required|numeric',
             'category_id' => 'required|exists:categories,id',
             'description' => 'nullable|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp,svg',
+            'images' => 'nullable|array',
+            'images.*' => 'nullable|image|mimes:jpeg,png,jpg,webp,svg',
         ] + ($this->isMethod('POST') ? $this->store() : $this->update());
     }
 
@@ -43,5 +46,4 @@ class ProductRequest extends FormRequest
             'stock_no' => 'required|string|unique:products,stock_no,' . decrypt($this->route('product')),
         ];
     }
-    
 }
