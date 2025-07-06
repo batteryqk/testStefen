@@ -48,15 +48,12 @@ class ProductService
 
             if ($primaryImage) {
                 $data['image'] = $this->handleFileUpload($primaryImage, 'products', $data['name']);
+                ProductImage::create([
+                    'product_id' => $product->id,
+                    'image' => $data['image'],
+                    'is_primary' => 1
+                ]);
             }
-
-            ProductImage::create([
-                'product_id' => $product->id,
-                'image' => $data['image'],
-                'is_primary' => 1
-            ]);
-
-
             if (!empty($data['images']) && isArray($data['images']) && count($data['images']) > 0) {
                 foreach ($images as $image) {
                     $imagePath = $this->handleFileUpload($image, 'products', $data['name']);
@@ -71,11 +68,61 @@ class ProductService
         });
     }
 
-    public function updateProduct(Product $product, array $data,): Product
+    public function updateProduct(Product $product, array $data, $primaryImage, $images): Product
     {
-        return DB::transaction(function () use ($product, $data) {
+        return DB::transaction(function () use ($product, $data, $primaryImage, $images) {
             $data['updated_by'] = admin()->id;
             $product->update($data);
+
+            if (!empty($data['attribute_values']) && isArray($data['attribute_values']) && count($data['attribute_values']) > 0) {
+                ProductAttribute::where('product_id', $product->id)->where('attribute_name', ProductAttribute::SIZE_ATTRIBUTE)->delete();
+                foreach ($data['attribute_values'] as $attributeValue) {
+                    ProductAttribute::create([
+                        'product_id' => $product->id,
+                        'attribute_name' => ProductAttribute::SIZE_ATTRIBUTE,
+                        'attribute_value' => $attributeValue,
+                    ]);
+                }
+            }
+
+
+            if ($primaryImage) {
+                $oldPrimaryImage = ProductImage::where('product_id', $product->id)
+                    ->where('is_primary', 1)
+                    ->get();
+                $this->fileDelete($oldPrimaryImage->pluck('image')->toArray());
+                $oldPrimaryImage->each->delete();
+
+                $data['image'] = $this->handleFileUpload($primaryImage, 'products', $data['name']);
+
+                ProductImage::create([
+                    'product_id' => $product->id,
+                    'image' => $data['image'],
+                    'is_primary' => 1
+                ]);
+            }
+
+
+            if (!empty($images) && is_array($images) && count($images) > 0) {
+                // Delete old non-primary images
+                $oldImages = ProductImage::where('product_id', $product->id)
+                    ->where('is_primary', 0)
+                    ->get();
+
+                $this->fileDelete($oldImages->pluck('image')->toArray());
+                $oldImages->each->delete();
+
+                // Save new images
+                foreach ($images as $image) {
+                    $imagePath = $this->handleFileUpload($image, 'products', $data['name']);
+                    ProductImage::create([
+                        'product_id' => $product->id,
+                        'image' => $imagePath,
+                        'is_primary' => 0
+                    ]);
+                }
+            }
+
             return $product;
         });
     }
