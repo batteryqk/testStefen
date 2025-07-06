@@ -5,16 +5,59 @@
       <div class="w-full aspect-square overflow-hidden rounded-lg">
         <img id="mainImage" src="{{ asset('assets/frontend/imagens/n5.png') }}" alt="Main Product" class="w-full h-auto object-cover">
       </div>
-      <div class="flex gap-2 mt-4 overflow-x-auto scrollbar-hide">
-  <img src="{{ asset('assets/frontend/imagens/n6.png') }}" class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border flex-shrink-0" onclick="document.getElementById('mainImage').src = this.src">
-  <img src="{{ asset('assets/frontend/imagens/n7.png') }}" class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border flex-shrink-0" onclick="document.getElementById('mainImage').src = this.src">
-  <img src="{{ asset('assets/frontend/imagens/r1.png') }}" class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0" onclick="document.getElementById('mainImage').src = this.src">
-  <img src="{{ asset('assets/frontend/imagens/r2.png') }}" class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0" onclick="document.getElementById('mainImage').src = this.src">
+     <div class="relative">
+  <!-- Left Navigation Button -->
+  <button onclick="scrollThumbnails(-1)"
+    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
+    &#8592;
+  </button>
 
-  <!-- Extra Images -->
-  <img src="{{ asset('assets/frontend/imagens/r1.png') }}" class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0" onclick="document.getElementById('mainImage').src = this.src">
-  <img src="{{ asset('assets/frontend/imagens/r4.png') }}" class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0" onclick="document.getElementById('mainImage').src = this.src">
+  <!-- Thumbnails Wrapper -->
+ <div class="relative">
+  <!-- Left Navigation Button -->
+  <button onclick="scrollThumbnails(-1)"
+    class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
+    &#8592;
+  </button>
+
+  <!-- Thumbnails Scroll Container -->
+  <div id="thumbnailScroll"
+    class="flex gap-2 mt-4 overflow-x-auto px-6 scroll-smooth no-scrollbar">
+    
+    <img src="{{ asset('assets/frontend/imagens/n6.png') }}"
+      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border flex-shrink-0"
+      onclick="document.getElementById('mainImage').src = this.src">
+
+    <img src="{{ asset('assets/frontend/imagens/n7.png') }}"
+      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border flex-shrink-0"
+      onclick="document.getElementById('mainImage').src = this.src">
+
+    <img src="{{ asset('assets/frontend/imagens/r1.png') }}"
+      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0"
+      onclick="document.getElementById('mainImage').src = this.src">
+
+    <img src="{{ asset('assets/frontend/imagens/r2.png') }}"
+      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0"
+      onclick="document.getElementById('mainImage').src = this.src">
+
+    <img src="{{ asset('assets/frontend/imagens/r1.png') }}"
+      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0"
+      onclick="document.getElementById('mainImage').src = this.src">
+
+    <img src="{{ asset('assets/frontend/imagens/r4.png') }}"
+      class="w-23 sm:w-26 md:w-34 lg:w-32 xl:w-49 h-24 sm:h-28 md:h-32 object-cover cursor-pointer rounded-lg border bg-gray-50 flex-shrink-0"
+      onclick="document.getElementById('mainImage').src = this.src">
+  </div>
+
+  <!-- Right Navigation Button -->
+  <button onclick="scrollThumbnails(1)"
+    class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border rounded-full shadow p-2">
+    &#8594;
+  </button>
 </div>
+
+</div>
+
 
     </div>
 
@@ -74,4 +117,12 @@
   </div>
 </section>
 
-          
+          <script>
+  function scrollThumbnails(direction) {
+    const container = document.getElementById('thumbnailScroll');
+    container.scrollBy({
+      left: direction * 150,
+      behavior: 'smooth'
+    });
+  }
+</script>

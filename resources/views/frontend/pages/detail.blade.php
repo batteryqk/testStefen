@@ -22,10 +22,10 @@
       <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
         <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
         <img src="{{ asset('assets/frontend/imagens/r6.png') }}" alt="24/7 Support" class="w-full h-full">
-        <div class="flex items-center justify-between mt-4">
-           <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
-          <h4 class="text-2xl font-extrabold text-black">45,99€</h4>
-       </div>
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
+</div>
 
       </div>
 
@@ -33,50 +33,50 @@
       <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
         <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
         <img src="{{ asset('assets/frontend/imagens/r1.png') }}" alt="Ethereum" class="w-full h-full">
-          <div class="flex items-center justify-between mt-4">
-           <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
-          <h4 class="text-2xl font-extrabold text-black">45,99€</h4>
-       </div>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
+</div>
       </div>
 
       <!-- Slide 3 -->
       <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
         <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
         <img src="{{ asset('assets/frontend/imagens/r2.png') }}" alt="Solana" class="w-full h-full">
-          <div class="flex items-center justify-between mt-4">
-           <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
-          <h4 class="text-2xl font-extrabold text-black">45,99€</h4>
-       </div>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
+</div>
       </div>
 
       <!-- Slide 4 -->
       <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
         <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
         <img src="{{ asset('assets/frontend/imagens/r3.png') }}" alt="Dogecoin" class="w-full h-full">
-          <div class="flex items-center justify-between mt-4">
-           <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
-          <h4 class="text-2xl font-extrabold text-black">45,99€</h4>
-       </div>
+         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
+</div>
       </div>
 
       <!-- Slide 5 -->
       <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
         <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
         <img src="{{ asset('assets/frontend/imagens/r4.png') }}" alt="Bitcoin" class="w-full h-full">
-         <div class="flex items-center justify-between mt-4">
-           <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
-          <h4 class="text-2xl font-extrabold text-black">45,99€</h4>
-       </div>
+         <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
+</div>
       </div>
 
       <!-- Slide 6 -->
       <div class="swiper-slide bg-white rounded-xl flex items-center border-2 border-gray-200 p-4 gap-4 h-32 relative">
         <a href="javascript:void(0)" class="absolute inset-0 bg-transparent"></a>
         <img src="{{ asset('assets/frontend/imagens/r5.png') }}" alt="Bitcoin" class="w-full h-full">
-          <div class="flex items-center justify-between mt-4">
-           <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
-          <h4 class="text-2xl font-extrabold text-black">45,99€</h4>
-       </div>
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
+  <h5 class="text-xl font-bold text-gray-800">Casaco Valgrit Azul</h5>
+  <h4 class="text-2xl font-extrabold text-black mt-1 sm:mt-0">45,99€</h4>
+</div>
       </div>
     </div>
 
@@ -90,19 +90,7 @@
   <!-- Pagination -->
 <div class="swiper-pagination !-bottom-6 sm:!-bottom-7 md:!-bottom-8"></div>
 
-<!-- Navigation buttons -->
-<!-- Show navigation on all screens, but position differently for mobile -->
-<!-- <div
-    class="swiper-button swiper-button-prev absolute top-1/2 -translate-y-1/2 -left-9 sm:-left-8! md:-left-10! lg:-left-16xl:-left-24 2xl:-left-28 3xl:-left-20 flex items-center justify-center z-20">
-    <i data-lucide="chevron-left"
-         class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
-</div>
 
-<div
-    class="swiper-button swiper-button-next absolute top-1/2 -translate-y-1/2 -right-9 sm:-right-8! md:-right-10! lg:-right-16 xl:-right-24 2xl:-right-28 3xl:-right-20 flex items-center justify-center z-20">
-    <i data-lucide="chevron-right"
-         class="w-4 h-4 sm:w-5 sm:h-5 dark:text-text-white"></i>
-</div> -->
 
 </div>
 </div>
