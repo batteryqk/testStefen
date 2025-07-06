@@ -22,8 +22,8 @@
     <x-frontend.slide/>
 </section>
 <section>
-    <div class="section-container flex justify-center items-center min-h-[697px] bg-white py-16">
-        <div class="w-full max-w-[1500px]">
+    <div class="section-container flex justify-center items-center min-h-[693px] bg-white py-16">
+        <div class="w-full max-w-[1000px]">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Destaques</h2>
                 <p class="text-gray-500 mb-8 text-lg">Descubra nossa coleção premium de roupas fitness</p>
@@ -45,7 +45,7 @@
 
 
         <!-- Content Side -->
-        <div class="md:w-1/2 w-full flex flex-col mb-16 justify-start items-center md:items-start p-10 bg-gradient-to-br from-white to-gray-100">
+        <div class="md:w-1/2 max-w-[1828px] w-full flex flex-col mb-16 justify-start items-center md:items-start p-10 bg-gradient-to-br from-white to-gray-100">
             <h1 class="text-2xl md:text-4xl  text-black mb-6 text-left">Experimente a Diferença da Valgrit: Qualidade Que Se Sente em Cada Fibra!</h1>
             <p class="text-lg md:text-xl text-black mb-4 text-left">
            Na Valgrit, não vendemos apenas roupa desportiva – entregamos uma experiência de performance e conforto incomparáveis.

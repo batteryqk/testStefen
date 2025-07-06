@@ -31,11 +31,12 @@
 
     <!-- Product 1 -->
     <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+      <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
+
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
@@ -67,12 +68,12 @@
 
     <!-- Product 2 -->
     <!-- ... identical to Product 1, or you can customize ... -->
-<div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+<div class="bg-white rounded-3xl  overflow-hidden relative group px-2">
+      <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
@@ -100,12 +101,12 @@
     </div>
     <!-- Product 3 -->
     <!-- ... identical to Product 1, or you can customize ... -->
-<div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+<div class="bg-white rounded-3xl  overflow-hidden relative group px-2">
+       <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
@@ -134,11 +135,11 @@
     <!-- Product 4 -->
     <!-- ... identical to Product 1, or you can customize ... -->
 <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+      <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
@@ -165,11 +166,11 @@
       </div>
     </div>
     <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+      <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
@@ -196,11 +197,11 @@
       </div>
     </div>
     <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+       <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
@@ -227,11 +228,11 @@
       </div>
     </div>
     <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+     <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
@@ -258,11 +259,11 @@
       </div>
     </div>
     <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+      <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
@@ -289,11 +290,11 @@
       </div>
     </div>
     <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+      <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
@@ -320,11 +321,11 @@
       </div>
     </div>
     <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+    <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
@@ -351,11 +352,11 @@
       </div>
     </div>
     <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+     <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
@@ -382,11 +383,11 @@
       </div>
     </div>
     <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
-      <div class="relative overflow-hidden">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
-          class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
-        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-      </div>
+     <div class="relative overflow-hidden mt-4">
+  <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="Casaco Valgrit Azul"
+    class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+</div>
       <div class="p-5 sm:p-7">
         <h5 class="text-xl font-bold text-gray-800 mt-2 mb-3">Casaco Valgrit Azul</h5>
         <div class="flex items-center mb-4">
