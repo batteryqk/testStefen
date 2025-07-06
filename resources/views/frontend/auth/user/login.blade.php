@@ -21,7 +21,7 @@
             <x-text-input id="email" class="block mt-1 lg:w-full md:w-full w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2 " />
         </div>
-                
+
         <!-- Password -->
         <div class="mt-8">
             <x-input-label class="text-white" for="password" :value="__('Password')" />
