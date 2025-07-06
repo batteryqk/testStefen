@@ -17,7 +17,7 @@
     </div>
 </section>
 
-
+ 
 <section class="bg-white py-20" id="development">
     <x-frontend.slide/>
 </section>
