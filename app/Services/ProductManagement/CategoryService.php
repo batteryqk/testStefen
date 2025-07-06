@@ -60,6 +60,9 @@ class CategoryService
     public function permanentDelete(string  $encryptedId)
     {
         $category = $this->getDeletedCategory($encryptedId);
+        if ($category->image) {
+            $this->fileDelete($category->image);
+        }
         return $category->forceDelete();
     }
     public function toggleStatus(Category $category): void

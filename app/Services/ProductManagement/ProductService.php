@@ -73,7 +73,7 @@ class ProductService
     public function toggleFeatured(Product $product): void
     {
         $product->update([
-            'is_featured' => !$product->status,
+            'is_featured' => !$product->is_featured,
             'updated_by' => admin()->id
         ]);
     }
