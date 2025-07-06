@@ -31,7 +31,7 @@
     <div class="bg-white rounded-3xl overflow-hidden relative group px-2">
 
       <div class="relative overflow-hidden mt-4">
-        <img src="{{ asset('assets/frontend/imagens/blog3.png') }}" alt="{{ $product->name }}"
+        <img src="{{ $product->primaryImage?->first()?->modified_image }}" alt="{{ $product->name }}"
           class="w-full h-[320px] object-cover transition-transform duration-500 group-hover:scale-110">
         <div
           class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500">
