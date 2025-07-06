@@ -118,11 +118,11 @@
                             <input type="file" name="images[]"
                                 accept="image/jpeg, image/png, image/jpg, image/webp, image/svg" class="filepond"
                                 multiple id="images">
-                            <x-input-error class="mt-2" :messages="$errors->get('image')" />
+                            <x-input-error class="mt-2" :messages="$errors->get('images')" />
                         </div>
                     </div>
                     <div class="flex justify-end mt-5">
-                        <x-admin.primary-button>{{ __('Create') }}</x-admin.primary-button>
+                        <x-admin.primary-button>{{ __('Update') }}</x-admin.primary-button>
                     </div>
                 </form>
             </div>

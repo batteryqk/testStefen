@@ -132,7 +132,7 @@ class ProductController extends Controller
         $data['category_name'] = $data->category?->name;
         $data['creater_name'] = $this->creater_name($data);
         $data['updater_name'] = $this->updater_name($data);
-        $data['image'] = $data->primaryImage->first()->modified_image;
+        $data['image'] = $data->primaryImage->first() ? $data->primaryImage->first()->modified_image : null;
         $data['productAttributes'] = $data->productAttributes->select(['attribute_value']);
         return response()->json($data);
     }
