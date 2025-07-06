@@ -47,8 +47,8 @@ class UserService
             if (isset($data['password'])) {
                 $data['password'] = $data['password'] ?? $user->password;
             }
-            $data['updater_id'] = user()?->id;
-            $data['updater_type'] = get_class(user());
+            $data['updater_id'] = admin()->id;
+            $data['updater_type'] = get_class(admin());
             $user->update($data);
             return $user;
         });
@@ -67,22 +67,27 @@ class UserService
     public function restore(string $encryptedId): void
     {
         $user = $this->getDeletedUser($encryptedId);
-        $user->update(['updater_id' => user()->id, 'updater_type' => get_class(user())]);
+        $user->update(['updater_id' => admin()->id, 'updater_type' => get_class(admin())]);
         $user->restore();
     }
 
     public function permanentDelete(string $encryptedId): void
     {
         $user = $this->getDeletedUser($encryptedId);
+         if ($user->image) {
+            $this->fileDelete($user->image);
+        }
         $user->forceDelete();
     }
 
     public function toggleStatus(User $user): void
     {
+       
+        
         $user->update([
             'status' => !$user->status,
-            'updated_by' => user()->id,
-            'updater_type' => get_class(user())
+            'updater_id' => admin()->id,
+            'updater_type' => get_class(admin())
         ]);
     }
 }

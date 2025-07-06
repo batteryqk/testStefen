@@ -62,16 +62,16 @@
             <x-admin.navlink type="dropdown" icon="users" name="Product Management" :page_slug="$active"
                 :items="[
                     [
-                        'name' => 'Product',
-                        'route' => route('pm.product.index'),
-                        'icon' => '',
-                        'active' => 'product',
-                    ],
-                    [
                         'name' => 'Category',
                         'route' => route('pm.category.index'),
                         'icon' => '',
                         'active' => 'category',
+                    ],
+                    [
+                        'name' => 'Product',
+                        'route' => route('pm.product.index'),
+                        'icon' => '',
+                        'active' => 'product',
                     ],
                 ]" />
         </nav>

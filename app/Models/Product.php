@@ -106,7 +106,7 @@ class Product extends BaseModel
 
     public function getFeaturedBtnLabelAttribute()
     {
-        return $this->is_featured == self::FEATURED ? self::statusList()[self::NOT_FEATURED] : self::statusList()[self::FEATURED];
+        return $this->is_featured == self::FEATURED ? self::featuredList()[self::NOT_FEATURED] : self::featuredList()[self::FEATURED];
     }
 
     public function getFeaturedBtnColorAttribute()

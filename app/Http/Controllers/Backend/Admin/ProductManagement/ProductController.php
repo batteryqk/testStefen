@@ -77,7 +77,7 @@ class ProductController extends Controller
             [
                 'routeName' => 'pm.product.is-featured',
                 'params' => [encrypt($model->id)],
-                'label' => $model->featured_btn_color,
+                'label' => $model->featured_btn_label,
             ],
 
             [
@@ -160,6 +160,90 @@ class ProductController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+    try {
+            $admin = $this->productService->getProduct($id);
+            $this->productService->delete($admin);
+            session()->flash('success', 'Admin deleted successfully!');
+        } catch (\Throwable $e) {
+            session()->flash('error', 'Admin delete failed!');
+            throw $e;
+        }
+        return $this->redirectIndex();
+    }
+      public function trash(Request $request)
+    {
+        if ($request->ajax()) {
+            $query = $this->productService->getProducts()->onlyTrashed();
+
+            return DataTables::eloquent($query)
+               ->editColumn('category_id', fn($book) => $book->category?->name)
+                ->editColumn('status', fn($product) => "<span class='badge badge-soft {$product->status_color}'>{$product->status_label}</span>")
+                ->editColumn('is_featured', fn($product) => "<span class='badge badge-soft {$product->featured_color}'>{$product->featured_label}</span>")
+                ->editColumn('deleted_by', fn($admin) => $this->deleter_name($admin))
+                ->editColumn('deleted_at', fn($admin) => $admin->deleted_at_formatted)
+                ->editColumn('action', fn($admin) => view('components.admin.action-buttons', [
+                    'menuItems' => $this->trashedMenuItems($admin),
+                ])->render())
+                ->rawColumns(['category_id','status','is_featured','deleted_by', 'deleted_at', 'action'])
+                ->make(true);
+        }
+
+        return view('backend.admin.product-management.product.trash');
+    }
+
+
+    protected function trashedMenuItems($model): array
+    {
+        return [
+            [
+                'routeName' => 'pm.product.restore',
+                'params' => [encrypt($model->id)],
+                'label' => 'Restore',
+            ],
+            [
+                'routeName' => 'pm.product.permanent-delete',
+                'params' => [encrypt($model->id)],
+                'label' => 'Permanent Delete',
+                'p-delete' => true,
+            ]
+
+        ];
+    }
+       public function restore(string $id)
+    {
+        try {
+            $this->productService->restore($id);
+            session()->flash('success', "Product restored successfully");
+        } catch (\Throwable $e) {
+            session()->flash('Product restore failed');
+            throw $e;
+        }
+        return $this->redirectTrashed();
+    }
+
+    public function permanentDelete(string $id)
+    {
+        try {
+            $this->productService->permanentDelete($id);
+            session()->flash('success', "Product permanently deleted successfully");
+        } catch (\Throwable $e) {
+            session()->flash('Product permanent delete failed');
+            throw $e;
+        }
+        return $this->redirectTrashed();
+    }
+       public function status(string $id)
+    {
+        $user = $this->productService->getProduct($id);
+        $this->productService->toggleStatus($user);
+        session()->flash('success', 'Product status updated successfully!');
+        return redirect()->back();
+    }
+       public function isFeatured(string $id)
+    {
+        $user = $this->productService->getProduct($id);
+        $this->productService->toggleFeatured($user);
+        session()->flash('success', 'Product is featured updated successfully!');
+        return redirect()->back();
     }
 }
