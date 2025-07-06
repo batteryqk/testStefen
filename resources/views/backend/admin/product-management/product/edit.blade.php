@@ -72,7 +72,7 @@
                             </label>
                             <x-input-error class="mt-2" :messages="$errors->get('price')" />
                         </div>
-                        <!-- Price -->
+                        <!-- Stock -->
                         <div class="space-y-2">
                             <p class="label">{{ __('Stock No') }}
                                 <span class="text-red-500">*</span>
@@ -110,22 +110,25 @@
                     </div>
                 </form>
             </div>
-
-            {{-- documentation will be loded here and add md:col-span-2 class --}}
-
         </div>
     </section>
     @push('js')
-        <script src="{{ asset('assets/js/ckEditor5.js') }}">
-        </script> <script src="{{ asset('assets/js/filepond.js') }}"></script>
+        <script src="{{ asset('assets/js/ckEditor5.js') }}"></script>
+        <script src="{{ asset('assets/js/filepond.js') }}"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                file_upload(["#image"], ["image/jpeg", "image/png", "image/jpg, image/webp, image/svg"], {
-                    "#image": "{{ $product->modified_image }}",
-                });
-                file_upload(["#images"], ["image/jpeg", "image/png", "image/jpg, image/webp, image/svg"], {
-                    "#image": "{{ $product->modified_image }}",
-                });
+                const existingFiles = {
+                    "#image": "{{ $product?->primaryImage?->first()?->modified_image }}",
+                }
+                const existingMultiFiles = {
+                    "#images": @json($product->nonPrimayImages->map(fn($img) => $img->modified_image)->toArray()),
+                }
+                console.log(existingMultiFiles);
+
+                file_upload(["#image"], ['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/svg'],
+                    existingFiles);
+                file_upload(["#images"], ['image/jpeg', 'image/png', 'image/jpg', 'image/webp', 'image/svg'],
+                    existingMultiFiles, true);
             });
         </script>
     @endpush

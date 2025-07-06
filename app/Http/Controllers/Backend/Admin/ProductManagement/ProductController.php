@@ -139,7 +139,7 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         $data['product'] = $this->productService->getProduct($id);
-        $data['product']->load(['productImages', 'productAttributes']);
+        $data['product']->load(['images', 'primaryImage', 'nonPrimayImages', 'productAttributes']);
         $data['categories'] = $this->categoryService->getCategories()->select(['id', 'name'])->get();
         return view('backend.admin.product-management.product.edit', $data);
     }

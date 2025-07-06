@@ -4,22 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use App\Models\BaseModel;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 class Product extends BaseModel
 {
     protected $fillable = [
-    'name',
-    'description',
-    'price',
-    'status',
-    'is_featured',
-    'sort_order',
-    'slug',
-    'stock_no',
-    'category_id',
-    'created_by',
-    'updated_by',
-    'deleted_by',
-];
+        'name',
+        'description',
+        'price',
+        'status',
+        'is_featured',
+        'sort_order',
+        'slug',
+        'stock_no',
+        'category_id',
+        'created_by',
+        'updated_by',
+        'deleted_by',
+    ];
 
 
     public function category()
@@ -27,7 +29,7 @@ class Product extends BaseModel
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
-         public function __construct(array $attributes = [])
+    public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
         $this->appends = array_merge(parent::getAppends(), [
@@ -122,12 +124,40 @@ class Product extends BaseModel
         return $query->where('is_featured', self::NOT_FEATURED);
     }
 
-    public function productImages()
-    {
-        return $this->hasMany(ProductImage::class, 'product_id', 'id');
-    }
+    // public function productImages()
+    // {
+    //     return $this->hasMany(ProductImage::class, 'product_id', 'id');
+    // }
     public function productAttributes()
     {
         return $this->hasMany(ProductAttribute::class, 'product_id', 'id');
+    }
+
+    // public function primaryImage()
+    // {
+    //     return $this->hasOne(ProductImage::class, 'product_id', 'id')->where('is_primary', 1);
+    // }
+
+    // public function nonPrimayImages()
+    // {
+    //     return $this->hasMany(ProductImage::class)->where('is_primary', 0);
+    // }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(ProductImage::class, 'product_id', 'id');
+    }
+    public function primaryImage(): HasMany
+    {
+        return $this->images()->primary();
+    }
+
+    public function nonPrimayImages(): HasMany
+    {
+        return $this->images()->notPrimary();
+    }
+    public function activeImages(): HasMany
+    {
+        return $this->images()->active();
     }
 }
