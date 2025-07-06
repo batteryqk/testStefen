@@ -131,7 +131,7 @@ class ProductController extends Controller
         $data['category_name'] = $data->category?->name;
         $data['creater_name'] = $this->creater_name($data);
         $data['updater_name'] = $this->updater_name($data);
-        $data['image'] = $data->primaryImage->first()->modified_image;
+        $data['image'] = $data->primaryImage->first() ? $data->primaryImage->first()->modified_image : null;
         $data['productAttributes'] = $data->productAttributes->select(['attribute_value']);
         return response()->json($data);
     }
@@ -159,7 +159,9 @@ class ProductController extends Controller
         try {
             $product = $this->productService->getProduct($id);
             $validated = $request->validated();
-            $this->productService->updateProduct($product, $validated);
+            $primaryImage = $request->validated('image') && $request->hasFile('image') ? $request->file('image') : null;
+            $images = $request->validated('images') && $request->hasFile('images') ? $request->file('images') : null;
+            $this->productService->updateProduct($product, $validated, $primaryImage, $images);
             session()->flash('success', "Product updated successfully");
         } catch (\Throwable $e) {
             session()->flash('Product update failed');
