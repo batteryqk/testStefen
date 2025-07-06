@@ -122,6 +122,12 @@ class Product extends BaseModel
         return $query->where('is_featured', self::NOT_FEATURED);
     }
 
-    
-  
+    public function productImages()
+    {
+        return $this->hasMany(ProductImage::class, 'product_id', 'id');
+    }
+    public function productAttributes()
+    {
+        return $this->hasMany(ProductAttribute::class, 'product_id', 'id');
+    }
 }
