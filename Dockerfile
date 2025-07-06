@@ -38,6 +38,13 @@ RUN mkdir -p storage/framework/{views,sessions,cache} \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
+
+    RUN apt-get update && apt-get install -y \
+    libfreetype6-dev \
+    libjpeg62-turbo-dev \
+    libpng-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd
 # ----------------------------------------
 # 6. Install PHP dependencies
 # ----------------------------------------

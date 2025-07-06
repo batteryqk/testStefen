@@ -160,7 +160,9 @@ class ProductController extends Controller
         try {
             $product = $this->productService->getProduct($id);
             $validated = $request->validated();
-            $this->productService->updateProduct($product, $validated);
+            $primaryImage = $request->validated('image') && $request->hasFile('image') ? $request->file('image') : null;
+            $images = $request->validated('images') && $request->hasFile('images') ? $request->file('images') : null;
+            $this->productService->updateProduct($product, $validated, $primaryImage, $images);
             session()->flash('success', "Product updated successfully");
         } catch (\Throwable $e) {
             session()->flash('Product update failed');
