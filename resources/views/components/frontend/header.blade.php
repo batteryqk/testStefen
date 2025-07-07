@@ -1,7 +1,7 @@
 <section class="bg-text-secondary "> <!-- Added pt-20 to prevent content overlap -->
 
     <nav class="bg-white shadow-md fixed top-0 w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
             <div class="flex items-center justify-between h-20">
 
                 <div class="flex items-center">
@@ -23,7 +23,7 @@
                     </div>
                     <div class="flex-shrink-0 hidden md:block">
                         <a href="{{ route('f.home') }}" class="flex items-center space-x-2">
-                            <img src="{{ asset('frontend/images/logo.PNG') }}" alt="Valgrit Logo" class="h-14">
+                            <img src="{{ asset('frontend/images/logo.PNG') }}" alt="Valgrit Logo" class="h-20">
                         </a>
                     </div>
                 </div>
@@ -37,26 +37,26 @@
                         </div>
                         <div class="hidden md:flex items-baseline space-x-10">
                             <a href="{{ route('f.home') }}"
-                                class="group relative nav-link px-3 py-2 rounded-md text-2xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.home') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
+                                class="group relative nav-link px-3 py-2 rounded-md text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.home') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
                                 Início
                                 <span
                                     class="absolute bottom-0 left-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out {{ request()->routeIs('f.home') ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
                             </a>
                             <a href="{{ route('f.products') }}"
-                                class="group relative nav-link px-3 py-2 rounded-md text-2xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.products') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
+                                class="group relative nav-link px-3 py-2 rounded-md text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.products') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
                                 Produtos
                                 <span
                                     class="absolute bottom-0 left-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out {{ request()->routeIs('f.products') ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
                             </a>
                             <a href="{{ route('f.shop') }}"
-                                class="group relative nav-link px-3 py-2 rounded-md text-2xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.shop') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
+                                class="group relative nav-link px-3 py-2 rounded-md text-3xl font-bold transition-colors duration-300 ease-in-out {{ request()->routeIs('f.shop') ? 'text-text-primary' : 'text-text-black hover:text-text-primary' }}">
                                 Loja
                                 <span
                                     class="absolute bottom-0 left-0 h-0.5 bg-text-primary transition-all duration-300 ease-in-out {{ request()->routeIs('f.shop') ? 'w-full' : 'w-0 group-hover:w-full' }}"></span>
                             </a>
                         </div>
                     </div>
-                    <div class="absolute right-50 flex justify-end items-center space-x-6 pr-4">
+                    <div class="absolute right-30 flex justify-end items-center space-x-6 pr-4">
                         <button class="text-text-black hover:text-text-primary focus:outline-none">
                             <svg class="h-7 w-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
