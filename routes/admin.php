@@ -15,7 +15,7 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
     // Admin Routes
     Route::resource('admin', AdminController::class);
     Route::controller(AdminController::class)->name('admin.')->prefix('admin')->group(function () {
-      Route::post('/show/{admin}', 'show')->name('show.custom');
+      Route::post('/show/{admin}', 'show')->name('show');
       Route::get('/status/{admin}', 'status')->name('status');
       Route::get('/trash/bin', 'trash')->name('trash');
       Route::get('/restore/{admin}', 'restore')->name('restore');
@@ -27,7 +27,7 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
   Route::group(['as' => 'um.', 'prefix' => 'user-management'], function () {
     Route::resource('user', UserController::class);
     Route::controller(UserController::class)->name('user.')->prefix('user')->group(function () {
-      Route::post('/show/{user}', 'show')->name('show.custom');
+      Route::post('/show/{user}', 'show')->name('show');
       Route::get('/status/{user}', 'status')->name('status');
       Route::get('/trash/bin', 'trash')->name('trash');
       Route::get('/restore/{user}', 'restore')->name('restore');
@@ -40,7 +40,7 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
     // Categories
     Route::resource('category', CategoryController::class);
     Route::controller(CategoryController::class)->name('category.')->prefix('category')->group(function () {
-      Route::post('/show/{category}', 'show')->name('show.custom');
+      Route::post('/show/{category}', 'show')->name('show');
       Route::get('/status/{category}', 'status')->name('status');
       Route::get('/trash/bin', 'trash')->name('trash');
       Route::get('/restore/{category}', 'restore')->name('restore');
@@ -50,7 +50,7 @@ Route::group(['middleware' => ['auth:admin'], 'prefix' => 'admin'], function () 
     // Products
     Route::resource('product', ProductController::class);
     Route::controller(ProductController::class)->name('product.')->prefix('product')->group(function () {
-      Route::post('/show/{product}', 'show')->name('show.custom');
+      Route::post('/show/{product}', 'show')->name('show');
       Route::get('/status/{product}', 'status')->name('status');
       Route::get('/is-featured/{product}', 'isFeatured')->name('is-featured');
       Route::get('/trash/bin', 'trash')->name('trash');
