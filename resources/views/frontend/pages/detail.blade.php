@@ -57,10 +57,9 @@
                     <div class="mb-4">
                         <p class="font-semibold mb-2">Size:</p>
                         <select class="border rounded px-7 py-2 w-full sm:w-50">
-                            <option value="selected disabled hidden">Selecte Size</option>
-                            @foreach (App\Models\ProductAttribute::sizeList() as $key => $size)
-                                <option value="{{ $key }}"
-                                    {{ in_array($key, $product->attribute_values ?? []) ? 'selected' : '' }}>
+                            <option value="" selected disabled hidden>Selecte Size</option>
+                            @foreach ($product->attribute_values as $key => $size)
+                                <option value="{{ $key }}">
                                     {{ $size }}
                                 </option>
                             @endforeach
@@ -102,16 +101,88 @@
         </div>
     </section>
 
-    <x-frontend.detail />
+
+    <section class="bg-white mb-8" id="development">
+        <div class="container mx-auto max-w-8xl">
+            <div class="relative px-4 mb-8">
+                <div class="text-center px-2 sm:px-0">
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold mb-2 sm:mb-4 text-gray-900">
+                        Produtos Recomendados
+                    </h1>
+                    <p class="text-base sm:text-lg text-gray-600">
+                        Novos produtos para o seu guarda-roupas
+                    </p>
+                </div>
+            </div>
+
+            <!-- Swiper Slider -->
+            <div class="swiper mySwiper w-full h-full">
+                <div class="swiper-wrapper ">
+
+                    @foreach ($related_products as $product)
+                        <x-frontend.detail :product="$product" />
+                    @endforeach
+                </div>
+
+                <!-- Pagination (optional) -->
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+
+            <!-- Prev Arrow -->
+
+            <!-- Pagination -->
+            <div class="swiper-pagination !-bottom-6 sm:!-bottom-7 md:!-bottom-8"></div>
+        </div>
+    </section>
+
+
+
+    <!-- Swiper JS CDN -->
+
+
+    @push('js')
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <!-- Swiper Init -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                loop: true,
+                spaceBetween: 20,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-prev",
+                    prevEl: ".swiper-button-next",
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 2,
+                        slidesPerGroup: 1,
+                    },
+                    640: {
+                        slidesPerView: 4,
+                        slidesPerGroup: 1,
+                    },
+                    1024: {
+                        slidesPerView: 5,
+                        slidesPerGroup: 1,
+                    },
+                },
+            });
+        </script>
+
+
+        <script>
+            function scrollThumbnails(direction) {
+                const container = document.getElementById('thumbnailScroll');
+                container.scrollBy({
+                    left: direction * 150,
+                    behavior: 'smooth'
+                });
+            }
+        </script>
+    @endpush
 
 </x-frontend::layout>
-
-<script>
-    function scrollThumbnails(direction) {
-        const container = document.getElementById('thumbnailScroll');
-        container.scrollBy({
-            left: direction * 150,
-            behavior: 'smooth'
-        });
-    }
-</script>
