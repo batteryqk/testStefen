@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductAttribute;
 
 class HomeController extends Controller
 {
@@ -16,9 +17,12 @@ class HomeController extends Controller
   public function detail(string $slug)
   {
     $data['product'] = Product::where('slug', $slug)->first();
-    $data['product']->load(['primaryImage', 'nonPrimayImages', 'productAttributes']);
-  
-
+    $data['product']->attribute_values = $data['product']->productAttributes
+      ->where('attribute_name', ProductAttribute::SIZE_ATTRIBUTE)
+      ->pluck('attribute_value')
+      ->toArray();
+    $data['related_products'] = Product::where('category_id', $data['product']->category_id)->where('id', '!=', $data['product']->id)->latest()->take(6)->get();
+    $data['related_products']->load(['primaryImage', 'nonPrimayImages']);
     return view('frontend.pages.detail', $data);
   }
 
